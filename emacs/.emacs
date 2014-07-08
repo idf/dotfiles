@@ -1,4 +1,4 @@
-(setq make-backup-files nil) 
-(global-linum-mode t)
-(global-set-key "\C-m" 'newline-and-indent)
-(electric-pair-mode 1)
+(setq make-backup-files nil)  ; no backup
+(global-linum-mode t)  ; show line number 
+(global-set-key "\C-m" 'newline-and-indent)  ; indentation 
+(electric-pair-mode 1)  ; pairing brackets 
