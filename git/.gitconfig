@@ -1,3 +1,16 @@
 [user]
-	name = Zhang Danyang
+	name = Daniel D. ZHANG
 	email = zhangdanyangg@gmail.com
+
+# courtesy to https://github.com/imwithye/dotfiles/blob/master/git/gitconfig
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge 
+[core]
+	excludesfile = ~/.gitignore
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	rmdf = !git rm $(git ls-files --deleted)
+	today = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --since=midnight
+[color]
+	ui = true
