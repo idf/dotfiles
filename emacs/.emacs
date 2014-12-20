@@ -18,4 +18,5 @@
 
 ; jedi:setup
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)                 ; optional
+(setq jedi:complete-on-dot t)
+(setq jedi:get-in-function-call-delay 10)
