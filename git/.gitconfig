@@ -8,6 +8,7 @@
   smudge = git-media-smudge 
 [core]
   excludesfile = ~/.gitignore
+  # http://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows
   autocrlf = false
   eol = lf
 [alias]
