@@ -232,3 +232,4 @@ uwsgi_params
 .idea
 .idea/
 *.eml
+# IntelliJ docs require that *.iml shall be included in the source control.
