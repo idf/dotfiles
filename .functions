@@ -254,9 +254,9 @@ source ~/env.sh
 NC='\e[0m'
 bold='\e[1m'
 cd() {
-        builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a;
-	}
+    builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a;
+}
 #######################################
 # Applications
 #######################################
-alias emacs='emacs -nw' ']]'
+alias emacs='emacs -nw'
