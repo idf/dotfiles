@@ -1,6 +1,4 @@
-complete -F _optcomplete explorer
-source /env.sh
-
+source ~/env.sh
 
 #######################################
 # Functions 
@@ -8,9 +6,9 @@ source /env.sh
 NC='\e[0m'
 bold='\e[1m'
 cd() {
-    builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls; 
+    builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a; 
 }
 #######################################
 # Applications 
 #######################################
-alias emacs='emacs -nw' # make emacs no window by default 
+alias emacs='emacs -nw' 
