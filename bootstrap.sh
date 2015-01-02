@@ -1,22 +1,35 @@
 #!/usr/bin/env bash
-
-cur=$(dirname "${BASH_SOURCE}");
+flag="-nfs";
+cur=$(pwd);
 cd $cur;
 
 function doIt() {
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-    --exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~;
+    for dotfile in .?*; do
+	case $dotfile in
+	    *.elc)
+		continue;;
+	    ..)
+		continue;;
+	    .git)
+		continue;;
+	    *)
+		ln $flag  "$cur/${dotfile}" $HOME
+		;;
+	esac
+    done
+
+    ln $flag "$cur/tmux-config/.tmux.conf" $HOME;
     
     source ~/.bashrc;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     doIt;
-    else
-    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+else
+    read -p "This may overwrite existing files in your home directory ($HOME). Are you sure? (y/n) " -n 1;
     echo "";
     if [[ $REPLY =~ ^[Yy]$ ]]; then
 	doIt;
-	fi;
     fi;
+fi;
 unset doIt;
