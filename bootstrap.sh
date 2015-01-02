@@ -19,7 +19,6 @@ function doIt() {
     done
 
     ln $flag "$cur/tmux-config/.tmux.conf" $HOME;
-    
     source ~/.bashrc;
 }
 

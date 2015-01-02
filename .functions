@@ -245,3 +245,18 @@ function o() {
 function tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+
+source ~/env.sh
+#######################################
+# Functions
+#######################################
+NC='\e[0m'
+bold='\e[1m'
+cd() {
+        builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a;
+	}
+#######################################
+# Applications
+#######################################
+alias emacs='emacs -nw' ']]'

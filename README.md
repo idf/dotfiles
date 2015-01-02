@@ -11,3 +11,6 @@ bash bootstrap.sh
 
 #Git Subtree
 * tmux-config (public branch)
+
+#References
+* [mathiasbynens](https://github.com/mathiasbynens/dotfiles)
