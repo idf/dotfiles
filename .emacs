@@ -2,7 +2,7 @@
 (global-linum-mode t)  ; show line number 
 (global-set-key "\C-m" 'newline-and-indent)  ; indentation 
 (electric-pair-mode 1)  ; pairing brackets 
-
+(setq frame-background-mode 'dark)
 ; el-get
 ;(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
