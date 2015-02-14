@@ -246,3 +246,8 @@ target/
 ## Bower
 #############
 bower_components/
+
+#############
+## MATLAB
+#############
+*.asv
