@@ -10,7 +10,7 @@ bash bootstrap.sh
 ```
 
 #Git Subtree
-* tmux-config (public branch)
+* [tmux-config](https://github.com/idf/tmux-config) (public branch)
 
 #References
 * [mathiasbynens](https://github.com/mathiasbynens/dotfiles)

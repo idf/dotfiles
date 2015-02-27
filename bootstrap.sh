@@ -13,12 +13,12 @@ function doIt() {
 	    .git)
 		continue;;
 	    *)
-		ln $flag  "$cur/${dotfile}" $HOME
+		ln $flag  "$cur/${dotfile}" /home/;
 		;;
 	esac
     done
 
-    ln $flag "$cur/tmux-config/.tmux.conf" $HOME;
+    ln $flag "$cur/tmux-config/.tmux.conf" /home/;
     source ~/.bashrc;
 }
 
