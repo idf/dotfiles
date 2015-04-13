@@ -14,3 +14,8 @@ bash bootstrap.sh
 
 #References
 * [mathiasbynens](https://github.com/mathiasbynens/dotfiles)
+
+#Miscellaneous
+* https://github.com/chrisallenlane/cheat
+* https://github.com/joelthelion/autojump
+* https://github.com/huyng/bashmarks
