@@ -246,8 +246,14 @@ function tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
-
+if [ ! -f "~/env.sh" ]; then
+   touch ~/env.sh;
+fi
 source ~/env.sh
+if [ ! -f "~/ssh_profile.sh" ]; then
+    echo "# ssh -l USENAME sub.site.com -p PORT" > ~/ssh_profile.sh;
+fi 
+source ~/ssh_profile.sh
 source ~/.local/bin/bashmarks.sh  # bashmarks
 
 #######################################
