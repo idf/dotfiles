@@ -6,6 +6,7 @@ cd $cur;
 function doIt() {
     home=$1;
     echo "Setting files in $home";
+    ln $flag "$cur/init" $home
     for dotfile in .?*; do
 	case $dotfile in
 	    *.elc)
@@ -15,7 +16,7 @@ function doIt() {
 	    .git)
 		continue;;
 	    *)
-		ln $flag  "$cur/${dotfile}" $home;
+		ln $flag "$cur/${dotfile}" $home;
 		;;
 	esac
     done
