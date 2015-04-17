@@ -9,6 +9,11 @@ under current directory
 bash bootstrap.sh
 ```
 
+install OS X defaults (need to log out and log in again)
+```bash
+sudo bash ~/.osx
+```
+
 #Git Subtree
 * [tmux-config](https://github.com/idf/tmux-config) (public branch)
 
