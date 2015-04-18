@@ -259,8 +259,8 @@ source ~/.local/bin/bashmarks.sh  # bashmarks
 #######################################
 # Functions
 #######################################
-NC='\e[0m'
-bold='\e[1m'
+NC='\033[0m'
+bold='\033[1m'
 cd() {
     builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a;
 }
