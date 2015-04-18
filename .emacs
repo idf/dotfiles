@@ -20,3 +20,9 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 (setq jedi:get-in-function-call-delay 10)
+
+;; need to install carbon emacs
+;; key bindings
+(when (eq system-type 'darwin) ;; mac specific settings
+
+  )
