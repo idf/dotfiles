@@ -98,7 +98,8 @@ brew install tree
 brew install webkit2png
 brew install zopfli
 
-brew tap caskroom/versions
+# brew tap caskroom/versions  # alternate versions 
+brew install caskroom/cask/brew-cask
 brew cask install sublime-text3
 brew cask install bettertouchtool
 
