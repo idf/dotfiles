@@ -256,6 +256,9 @@ fi
 source ~/ssh_profile.sh
 source ~/.local/bin/bashmarks.sh  # bashmarks
 
+# SSH
+eval `ssh-agent -s`
+
 #######################################
 # Functions
 #######################################
