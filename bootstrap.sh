@@ -6,7 +6,9 @@ cd $cur;
 function doIt() {
     home=$1;
     echo "Setting files in $home";
-    ln $flag "$cur/init" $home
+    if [ "$(uname)" == "Darwin" ]; then
+	ln $flag "$cur/init" $home;
+    fi
     for dotfile in .?*; do
 	case $dotfile in
 	    *.elc)
