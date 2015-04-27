@@ -10,6 +10,7 @@ alias -- -="cd -"
 # alias g="git"
 alias gpm="git push origin master"
 alias gpd="git push origin develop"
+alias sadd="ssh-add $HOME/.ssh/id_rsa"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
