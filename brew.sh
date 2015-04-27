@@ -102,6 +102,7 @@ brew install zopfli
 brew install caskroom/cask/brew-cask
 brew cask install sublime-text3
 brew cask install bettertouchtool
+brew cask install vlc
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -8,6 +8,8 @@ alias -- -="cd -"
 
 # Shortcuts
 # alias g="git"
+alias gpm="git push origin master"
+alias gpd="git push origin develop"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
