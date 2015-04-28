@@ -247,14 +247,14 @@ function tre() {
 }
 
 if [ ! -f "$HOME/env.sh" ]; then
-   touch ~/env.sh;
+   touch $HOME/env.sh;
 fi
-source ~/env.sh
+source $HOME/env.sh
 if [ ! -f "$HOME/ssh_profile.sh" ]; then
     echo "# ssh -l USENAME sub.site.com -p PORT" > $HOME/ssh_profile.sh;
 fi 
-source ~/ssh_profile.sh
-source ~/.local/bin/bashmarks.sh  # bashmarks
+source $HOME/ssh_profile.sh
+source $HOME/.local/bin/bashmarks.sh  # bashmarks
 
 # SSH
 eval `ssh-agent -s`
