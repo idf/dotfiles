@@ -78,7 +78,7 @@ cd ~
 ```
 tmux
 ```
-  And press `Control + a` then `d` to go back to the terminal.
+  And press `Control + b` then `d` to go back to the terminal.
 
   Update config:
 

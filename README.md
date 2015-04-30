@@ -35,8 +35,17 @@ DefaultKeyBinding.dict doesn't work in some applications like Xcode or Firefox. 
 [default keybindings](https://www.hcs.harvard.edu/~jrus/site/system-bindings.html)  
 [emacs keybindings](http://www.hcs.harvard.edu/~jrus/site/KeyBindings/Emacs%20Esc%20Bindings.dict)
 
-# Tmux-Session Save & Restore
-To save current session (save to `~/.tmux-session`):
+# Tmux
+## Basics
+[tmux_cheatsheet](https://gist.github.com/henrik/1967800)  
+
+To update config:
+```
+tmux source-file ~/.tmux.conf
+```
+
+## Tmux-Session Save & Restore
+To save current session (saved to `~/.tmux-session`):
 ```
 bash tmux-session save
 ```
