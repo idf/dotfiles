@@ -9,6 +9,13 @@ function doIt() {
     if [ "$(uname)" == "Darwin" ]; then
 	ln $flag "$cur/init" $home;
     fi
+    
+    # usr bin files
+    ln $flag "$cur/bin" $home;
+    PATH=$PATH:$home/bin;
+    export PATH;
+
+    # dotfiles 
     for dotfile in .?*; do
 	case $dotfile in
 	    *.elc)

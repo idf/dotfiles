@@ -33,4 +33,15 @@ To enable your new layout you must save it into your '~/Library/Keyboard Layouts
 KeyBindings are in ./KeyBindings  
 DefaultKeyBinding.dict doesn't work in some applications like Xcode or Firefox. Key combinations that enter dead key states (like opt+U in the U.S. keyboard layout) can't be reassigned.  
 [default keybindings](https://www.hcs.harvard.edu/~jrus/site/system-bindings.html)  
-[emacs keybindings](http://www.hcs.harvard.edu/~jrus/site/KeyBindings/Emacs%20Esc%20Bindings.dict)  
+[emacs keybindings](http://www.hcs.harvard.edu/~jrus/site/KeyBindings/Emacs%20Esc%20Bindings.dict)
+
+# Tmux-Session Save & Restore
+To save current session (save to `~/.tmux-session`):
+```
+bash tmux-session save
+```
+
+To restore previously saved session:
+```
+bash tmux-session restore
+```
