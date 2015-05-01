@@ -267,7 +267,24 @@ bold='\033[1m'
 cd() {
     builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a;
 }
+
 #######################################
 # Applications
 #######################################
+# Microsoft Office 
+word() {
+    open -a "Microsoft Word.app" $1;
+}
+ppt() {
+    open -a "Microsoft PowerPoint.app" $1;
+}
+excel() {
+    open -a "Microsoft Excel.app" $1;
+}
+
+# Editors 
+sublime() {
+    open -a "Sublime Text.app" $1;
+}
+
 alias emacs='emacs -nw'
