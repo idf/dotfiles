@@ -45,12 +45,17 @@ tmux source-file ~/.tmux.conf
 ```
 
 ## Tmux-Session Save & Restore
+First need to check the permission:
+```
+sudo chmod 755 ./bin/tmux-session 
+```
+
 To save current session (saved to `~/.tmux-session`):
 ```
-bash tmux-session save
+tmux-session save
 ```
 
 To restore previously saved session:
 ```
-bash tmux-session restore
+tmux-session restore
 ```
