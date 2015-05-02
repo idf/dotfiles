@@ -287,4 +287,8 @@ sublime() {
     open -a "Sublime Text.app" $1;
 }
 
+# Readers
+skim() {
+    open -a "Skim.app" $1; 
+}
 alias emacs='emacs -nw'
