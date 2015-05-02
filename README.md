@@ -62,3 +62,9 @@ To restore previously saved session:
 ```
 tmux-session restore
 ```
+
+## Multi-level Tmux
+[To send prefix](http://stackoverflow.com/questions/8518815/how-to-send-commands-when-opening-a-tmux-session-inside-another-tmux-session)
+
+# Troubleshooting
+If encounter "Failed to connect server", you need to start tmux.
