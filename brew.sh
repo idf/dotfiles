@@ -97,6 +97,8 @@ brew install ssh-copy-id
 brew install tree
 brew install webkit2png
 brew install zopfli
+brew install ruby
+brew install npm
 
 # brew tap caskroom/versions  # alternate versions 
 brew install caskroom/cask/brew-cask

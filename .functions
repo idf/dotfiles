@@ -273,22 +273,22 @@ cd() {
 #######################################
 # Microsoft Office 
 word() {
-    open -a "Microsoft Word.app" $1;
+    open -a "Microsoft Word.app" "$@";
 }
 ppt() {
-    open -a "Microsoft PowerPoint.app" $1;
+    open -a "Microsoft PowerPoint.app" "$@";
 }
 excel() {
-    open -a "Microsoft Excel.app" $1;
+    open -a "Microsoft Excel.app" "$@";
 }
 
 # Editors 
 sublime() {
-    open -a "Sublime Text.app" $1;
+    open -a "Sublime Text.app" "$@";
 }
 
 # Readers
 skim() {
-    open -a "Skim.app" $1; 
+    open -a "Skim.app" "$@"; 
 }
 alias emacs='emacs -nw'
