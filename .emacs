@@ -18,6 +18,9 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
+; auto installing pacakge 
+(el-get-install 'markdown-mode)
+
 ;; jedi:setup
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
