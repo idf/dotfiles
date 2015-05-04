@@ -1,5 +1,6 @@
 ;; Editors 
 (setq make-backup-files nil)  ; no backup
+(setq auto-save-default nil)  ; no auto-save
 (global-linum-mode t)  ; show line number 
 (electric-pair-mode 1)  ; pairing brackets 
 (setq frame-background-mode 'dark)
@@ -29,7 +30,8 @@
 ; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-anaconda))
+  (add-to-list 'company-backends 'company-anaconda)
+  )
 (add-hook 'python-mode-hook 'anaconda-mode)
 
 ;; jedi:setup, replaced by anaconda-mode
