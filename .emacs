@@ -18,13 +18,24 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
-; auto installing pacakge 
+; auto installing pacakge, sometimes sudo required
 (el-get-install 'markdown-mode)
+(el-get-install 'web-mode)
+(el-get-install 'company-mode)  ; replace auto-complete
+(el-get-install 'anaconda-mode)
+(el-get-install 'company-anaconda)
+(el-get-install 'multiple-cursors)
 
-;; jedi:setup
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-(setq jedi:get-in-function-call-delay 10)
+; company-mode
+(add-hook 'after-init-hook 'global-company-mode)
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-anaconda))
+(add-hook 'python-mode-hook 'anaconda-mode)
+
+;; jedi:setup, replaced by anaconda-mode
+; (add-hook 'python-mode-hook 'jedi:setup)
+; (setq jedi:complete-on-dot t)
+; (setq jedi:get-in-function-call-delay 10)
 
 (when (eq system-type 'darwin) ;; mac specific settings
 
@@ -37,3 +48,5 @@
 (global-set-key (kbd "M-p")
 		(lambda () (interactive) (previous-line 7)))
 (global-set-key (kbd "C-m") 'newline-and-indent)  ; indentation
+
+(global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not works in osx
