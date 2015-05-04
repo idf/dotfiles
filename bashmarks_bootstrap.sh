@@ -1,5 +1,5 @@
 sudo -v;
-if [ ! -f "~/.local/bin/bashmarks.sh" ]; then
+if [ ! -f "$HOME/.local/bin/bashmarks.sh" ]; then
     echo "installing bashmarks";
     git clone git://github.com/huyng/bashmarks.git;
     cd bashmarks;
