@@ -30,8 +30,7 @@
 ; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-anaconda)
-  )
+  (add-to-list 'company-backends 'company-anaconda))
 (add-hook 'python-mode-hook 'anaconda-mode)
 
 ;; jedi:setup, replaced by anaconda-mode
@@ -51,4 +50,4 @@
 		(lambda () (interactive) (previous-line 7)))
 (global-set-key (kbd "C-m") 'newline-and-indent)  ; indentation
 
-(global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not works in osx
+(global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not work in osx
