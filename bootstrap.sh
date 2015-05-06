@@ -12,8 +12,6 @@ function doIt() {
     
     # usr bin files
     ln $flag "$cur/bin" $home;
-    PATH=$PATH:$home/bin;
-    export PATH;
 
     # dotfiles 
     for dotfile in .?*; do
