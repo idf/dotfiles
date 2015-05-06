@@ -63,6 +63,17 @@ To restore previously saved session:
 tmux-session restore
 ```
 
+Using [tmuxp](https://github.com/tony/tmuxp):  
+save 
+```
+tmuxp freeze [-y] <session_name> 
+```
+
+reload 
+```
+tmuxp load <filename>
+```
+
 ## Multi-level Tmux
 [To send prefix](http://stackoverflow.com/questions/8518815/how-to-send-commands-when-opening-a-tmux-session-inside-another-tmux-session)
 
