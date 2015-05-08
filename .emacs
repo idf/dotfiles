@@ -29,10 +29,9 @@
 
 ; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'anaconda-mode
+(add-hook 'python-mode-hook 'anaconda-mode
   (lambda ()
     (setq-local company-backends '((company-anaconda)))))
-(add-hook 'python-mode-hook 'anaconda-mode)
 
 ;; jedi:setup, replaced by anaconda-mode
 ; (add-hook 'python-mode-hook 'jedi:setup)
