@@ -27,6 +27,8 @@
 (el-get-install 'company-anaconda)
 (el-get-install 'multiple-cursors)
 (el-get-install 'smex)
+(el-get-install 'org-mode)
+(el-get-install 'helm)
 
 ; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
@@ -57,3 +59,11 @@
 (global-set-key (kbd "M-x") 'smex)  ; $ chmod 777 ~/.emacs.d/smex-items
 (global-set-key (kbd "M-X") 'smex-major-mode-commands) ; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+; org-mode
+; for *.org 
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))  ; new line
+
+; helm
+(require 'helm-config)
+(global-set-key (kbd "M-h") 'helm-M-x)  ; upper case 
