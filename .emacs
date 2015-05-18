@@ -26,6 +26,7 @@
 (el-get-install 'anaconda-mode)
 (el-get-install 'company-anaconda)
 (el-get-install 'multiple-cursors)
+(el-get-install 'smex)
 
 ; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
@@ -51,3 +52,8 @@
 (global-set-key (kbd "C-m") 'newline-and-indent)  ; indentation
 
 (global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not work in osx
+
+; smex
+(global-set-key (kbd "M-x") 'smex)  ; $ chmod 777 ~/.emacs.d/smex-items
+(global-set-key (kbd "M-X") 'smex-major-mode-commands) ; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
