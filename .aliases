@@ -13,7 +13,8 @@ alias gpd="git push origin develop"
 alias sadd="ssh-add $HOME/.ssh/id_rsa"
 alias gst="git status -sb"
 
-alias ema="emacs -nw"
+alias ec="emacsclient -t"  # the emacs server will be started (with emacs --daemon) if it's not already running.
+alias emacs="emacs -nw"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
