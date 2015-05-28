@@ -14,7 +14,6 @@ alias sadd="ssh-add $HOME/.ssh/id_rsa"
 alias gst="git status -sb"
 
 alias ec="emacsclient -t"
-alias emacs="emacs -nw"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

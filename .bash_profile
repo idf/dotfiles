@@ -1,6 +1,6 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
-export ALTERNATE_EDITOR="";
+export ALTERNATE_EDITOR="";  # to make emacs --daemon auto start
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
