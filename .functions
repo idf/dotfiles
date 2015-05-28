@@ -291,7 +291,6 @@ sublime() {
 skim() {
     open -a "Skim.app" "$@"; 
 }
-alias emacs='emacs -nw'
 
 ip2geo() {
     curl -A "" ipinfo.io/"$1";  # make empty header to request json 
