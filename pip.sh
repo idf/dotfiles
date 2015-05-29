@@ -5,4 +5,3 @@ if !(hash pip 2>/dev/null); then
     sudo python get-pip.py;
     rm get-pip.py;
 fi
-sudo pip install cheat;
