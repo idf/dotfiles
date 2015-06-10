@@ -251,3 +251,15 @@ bower_components/
 ## MATLAB
 #############
 *.asv
+
+#############
+## BaKoMa
+#############
+*.ddf
+*.idx
+*.ilg
+*.ind
+*.Backup
+*.aux
+*.toc
+*.out

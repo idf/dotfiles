@@ -7,11 +7,14 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-# alias g="git"
-alias gpm="git push origin master"
-alias gpd="git push origin develop"
-alias sadd="ssh-add $HOME/.ssh/id_rsa"
+## Git
+alias ghm="git push origin master"
+alias ghd="git push origin develop"
+alias glm="git pull origin master"
+alias gld="git pull origin develop"
 alias gst="git status -sb"
+
+alias sadd="ssh-add $HOME/.ssh/id_rsa"
 
 alias ec="emacsclient -t"
 
