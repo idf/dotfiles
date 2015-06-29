@@ -29,7 +29,7 @@ function doIt() {
     done
 
     # bashmarks
-    bash bashmarks_bootstrap.sh;
+    bash bootstrap_bashmarks.sh;
 
     ln $flag "$cur/tmux-config/.tmux.conf" $home;
     source ~/.bashrc;
