@@ -1,7 +1,8 @@
 ;; Editors 
 (setq make-backup-files nil)  ; no backup
 (setq auto-save-default nil)  ; no auto-save
-(global-linum-mode t)  ; show line number 
+(global-linum-mode t)  ; show line number
+(setq vc-follow-symlinks t)  ; auto follow symbolic links
 (electric-pair-mode 1)  ; pairing brackets 
 (setq frame-background-mode 'dark)
 
