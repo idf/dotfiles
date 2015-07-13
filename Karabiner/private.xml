@@ -6,16 +6,20 @@
     <equal>com.google.Chrome</equal>
   </appdef>
   <appdef>
+    <appname>JETBRAINS</appname>
+    <prefix>com.jetbrains.</prefix>
+  </appdef>
+  <appdef>
     <appname>SKIM</appname>
     <equal>net.sourceforge.skim-app.skim</equal>
   </appdef>
   <appdef>
     <appname>BAKOMA</appname>
-    <equal>com.bakoma-tex.texword</equal>
+    <prefix>com.bakoma-tex.</prefix>
   </appdef>
   <appdef>
-    <appname>WORD</appname>
-    <equal>com.microsoft.Word</equal>
+    <appname>MS</appname>
+    <prefix>com.microsoft.</prefix>
   </appdef>
 
   <replacementdef>
@@ -27,6 +31,7 @@
       CHROME,
       SAFARI,
       SKIM,
+      JETBRAINS,
       REMOTEDESKTOPCONNECTION,
       TERMINAL,
       VI,
@@ -42,7 +47,7 @@
 
     <!-- write block in front to take hgiher precedence -->
     <block><!-- override -->
-      <only>WORD</only>
+      <only>MS</only>
       <autogen>__KeyToKey__ KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::HOME, ModifierFlag::OPTION_L,</autogen>
       <autogen>__KeyToKey__ KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::END, ModifierFlag::OPTION_L,</autogen>
     </block>
