@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sudo -v;
 if !(hash pip 2>/dev/null); then
     echo "installing pip";

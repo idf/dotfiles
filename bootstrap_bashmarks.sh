@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sudo -v;
 if [ ! -f "$HOME/.local/bin/bashmarks.sh" ]; then
     echo "installing bashmarks";
