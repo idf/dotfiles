@@ -272,30 +272,38 @@ cp_cur_path_clipboard() {
     pwd | pbcopy;
 }
 
-#######################################
-# Applications
-#######################################
-# Microsoft Office 
-word() {
-    open -a "Microsoft Word.app" "$@";
-}
-ppt() {
-    open -a "Microsoft PowerPoint.app" "$@";
-}
-excel() {
-    open -a "Microsoft Excel.app" "$@";
-}
-
-# Editors 
-sublime() {
-    open -a "Sublime Text.app" "$@";
-}
-
-# Readers
-skim() {
-    open -a "Skim.app" "$@"; 
-}
-
 ip2geo() {
     curl -A "" ipinfo.io/"$1";  # make empty header to request json 
 }
+
+#######################################
+# Applications
+#######################################
+if [[ `uname` == 'Darwin' ]]; then
+    # Microsoft Office 
+    word() {
+	open -a "Microsoft Word.app" "$@";
+    }
+    
+    ppt() {
+	open -a "Microsoft PowerPoint.app" "$@";
+    }
+    
+    excel() {
+	open -a "Microsoft Excel.app" "$@";
+    }
+
+    # Editors 
+    sublime() {
+	open -a "Sublime Text.app" "$@";
+    }
+
+    # Readers
+    skim() {
+	open -a "Skim.app" "$@"; 
+    }
+
+    preview() {
+	open -a "Preview.app" "$@";
+    }
+fi
