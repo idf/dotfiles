@@ -26,19 +26,20 @@ sudo bash ~/.osx
 * https://github.com/huyng/bashmarks
 
 # Karabiner
-To enable system-wide emacs mode, `cd Karabiner` and run the `bootstrap.sh` to install `private.xml` into Karabiner. Enable the private settings under the Karabiner preference panel.
+To enable system-wide emacs mode, `cd Karabiner` and run the `bootstrap.sh` to install `private.xml` into Karabiner. Enable the private settings under the Karabiner preference panel.  
+Download [Karabiner](https://pqrs.org/osx/karabiner/)
 
 # Keylayouts
 Keylayouts are in `./keylayout`  (edited by [Ukelele](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ukelele))  
 To enable your new layout you must save it into your '~/Library/Keyboard Layouts', and then enable it from System Preferences -> Keyboard -> Input Sources.  
-This only words in Cocoa apps; therefore, Karabiner in the above sections are prefereed.
+This only words in Cocoa apps; therefore, Karabiner in the above sections are preferred.
 
 # Key Bindings
 KeyBindings are in `./KeyBindings`  
 DefaultKeyBinding.dict doesn't work in some applications like Xcode or Firefox. Key combinations that enter dead key states (like opt+U in the U.S. keyboard layout) can't be reassigned.  
-This only words in Cocoa apps; therefore, Karabiner in the above sections are prefereed. 
+This only words in Cocoa apps; therefore, Karabiner in the above sections are preferred. 
 
-[default keybindings](https://www.hcs.harvard.edu/~jrus/site/system-bindings.html)
+[default keybindings](https://www.hcs.harvard.edu/~jrus/site/system-bindings.html)  
 [emacs keybindings](http://www.hcs.harvard.edu/~jrus/site/KeyBindings/Emacs%20Esc%20Bindings.dict)
 
 # Bashmarks
