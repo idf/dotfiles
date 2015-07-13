@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!-- https://github.com/tekezo/Karabiner/blob/master/src/core/server/Resources/include/checkbox/emacs_mode.xml -->
+<root>
+  <appdef>
+    <appname>CHROME</appname>
+    <equal>com.google.Chrome</equal>
+  </appdef>
+  <appdef>
+    <appname>SKIM</appname>
+    <equal>net.sourceforge.skim-app.skim</equal>
+  </appdef>
+  <appdef>
+    <appname>BAKOMA</appname>
+    <equal>com.bakoma-tex.texword</equal>
+  </appdef>
+  <appdef>
+    <appname>WORD</appname>
+    <equal>com.microsoft.Word</equal>
+  </appdef>
+
+  <replacementdef>
+    <replacementname>EMACS_MODE_IGNORE_APPS_0</replacementname>
+    <replacementvalue>
+      ECLIPSE,
+      EMACS,
+      FIREFOX,
+      CHROME,
+      SAFARI,
+      SKIM,
+      REMOTEDESKTOPCONNECTION,
+      TERMINAL,
+      VI,
+      VIRTUALMACHINE,
+      X11,
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Emacs - Basics</name>
+    <identifier>Emacs Basics</identifier>
+    <not>{{EMACS_MODE_IGNORE_APPS_0}}</not>
+
+    <!-- write block in front to take hgiher precedence -->
+    <block><!-- override m-b, m-f, c-a, c-e. -->
+      <only>WORD</only>
+      <autogen>__KeyToKey__ KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::HOME, ModifierFlag::OPTION_L,</autogen>
+      <autogen>__KeyToKey__ KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::END, ModifierFlag::OPTION_L,</autogen>
+    </block>
+
+    <block><!-- override m-b, m-f, c-a, c-e. -->
+      <only>BAKOMA</only>
+      <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,</autogen>
+      <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,</autogen>    
+      <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::HOME,</autogen>
+      <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END,</autogen> 
+      <autogen>__KeyToKey__ KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::HOME, ModifierFlag::OPTION_L,</autogen>
+      <autogen>__KeyToKey__ KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::END, ModifierFlag::OPTION_L,</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE,</autogen>
+    </block>
+   
+    <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::FORWARD_DELETE</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::TAB</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::P, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::N, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::B, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_RIGHT</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::PAGEDOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::PAGEUP</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::Y, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::V, ModifierFlag::COMMAND_L,</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,</autogen>
+    
+    <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,KeyCode::FORWARD_DELETE,</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::C, ModifierFlag::COMMAND_L,</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,</autogen>
+    
+    <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::FORWARD_DELETE, ModifierFlag::OPTION_L,</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,KeyCode::F, ModifierFlag::COMMAND_L,</autogen>
+    <autogen>__KeyToKey__ KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::ESCAPE</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::HOME,</autogen>
+    <autogen>__KeyToKey__ KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::END,</autogen>
+  </item>
+
+  <!-- c-x -->
+  <item>
+    <name>Emacs - Use Control+X as prefix key</name>
+    <item>
+      <!-- C-x Mode Core -->
+      <name>Control+X detail</name>
+      <appendix>C-x C-s to Save (Command+S)</appendix>
+      <appendix>C-x C-f to Open (Command+O)</appendix>
+      <appendix>C-x u to Undo (Command+Z)</appendix>
+      <appendix>C-x k to Close (Command+W)</appendix>
+      <appendix>C-x C-c to Quit (Command+Q)</appendix>
+      <appendix>C-x C-g to turn off Control+X Mode</appendix>
+      <identifier vk_config="true">notsave.emacsmode_ex_controlX_core_0</identifier>
+      {{ EMACS_MODE_C_X_EXTRA }}
+      <autogen>__KeyToKey__ KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE, KeyCode::S, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0</autogen>
+      <autogen>__KeyToKey__ KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE, KeyCode::Q, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0</autogen>
+      <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::NONE | ModifierFlag::NONE, KeyCode::A, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0</autogen>
+      <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE, KeyCode::O, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0</autogen>
+      <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::NONE, KeyCode::Z, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0,</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::NONE, KeyCode::W, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0,</autogen>
+      <autogen>__KeyToKey__ KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,                                      KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0</autogen>
+    </item>
+    <item>
+      <name>Enable Control+X</name>
+      <identifier>option.emacsmode_ex_controlX_0</identifier>
+      <not>{{EMACS_MODE_IGNORE_APPS_0}}</not>
+      <autogen>__KeyToKey__ KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE, KeyCode::VK_CONFIG_FORCE_ON_notsave_emacsmode_ex_controlX_core_0</autogen>
+    </item>
+  </item>
+
+  <!-- c-space -->
+  <item>
+    <name>Emacs - Use Control+Space as MarkSet</name>
+    <item>
+      <!-- MarkSet Mode Core -->
+      <name>MarkSet Mode detail</name>
+      <appendix>Control+W to Command_L+X</appendix>
+      <appendix>Option+W to Command_L+C</appendix>
+      <appendix>Control+G to turn off MarkSet</appendix>
+      <appendix>Control+Space to turn off MarkSet</appendix>
+      <identifier vk_config="true">notsave.emacsmode_ex_controlSpace_core_0</identifier>
+      {{ EMACS_MODE_MARKSET_EXTRA }}
+      <autogen>
+        __KeyToKey__
+        KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+        KeyCode::X, ModifierFlag::COMMAND_L,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlSpace_core_0,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION  | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+        KeyCode::C, ModifierFlag::COMMAND_L,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlSpace_core_0,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlSpace_core_0,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlSpace_core_0,
+        Option::NOREPEAT,
+      </autogen>
+    </item>
+    <item>
+      <name>Enable Control+Space</name>
+      <identifier>option.emacsmode_ex_controlSpace_0</identifier>
+      <not>{{EMACS_MODE_IGNORE_APPS_0}}</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::VK_LOCK_SHIFT_L_FORCE_ON,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_emacsmode_ex_controlSpace_core_0
+      </autogen>
+    </item>
+  </item>
+</root>
