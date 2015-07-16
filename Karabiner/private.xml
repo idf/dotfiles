@@ -26,9 +26,6 @@
     <replacementvalue>
       ECLIPSE,
       EMACS,
-      FIREFOX,
-      CHROME,
-      SAFARI,
       SKIM,
       JETBRAINS,
       Karabiner,
@@ -64,36 +61,56 @@
         <autogen>__KeyToKey__ KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::END, ModifierFlag::OPTION_L,</autogen>
         <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE,</autogen>
       </block>
-     
+
+      <!-- Del --> 
       <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::FORWARD_DELETE,</autogen>
+      <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::FORWARD_DELETE, ModifierFlag::OPTION_L,</autogen>
+      
+      <!-- Indent --> 
       <autogen>__KeyToKey__ KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::TAB</autogen>
 
+      <!-- Up/Down/Left/Right -->
       <autogen>__KeyToKey__ KeyCode::P, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_UP,</autogen>
       <autogen>__KeyToKey__ KeyCode::N, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_DOWN,</autogen>
       <autogen>__KeyToKey__ KeyCode::B, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_LEFT,</autogen>
       <autogen>__KeyToKey__ KeyCode::F, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_RIGHT,</autogen>
 
-      <autogen>__KeyToKey__ KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::PAGEDOWN,</autogen>
-      <autogen>__KeyToKey__ KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::PAGEUP,</autogen>
+      <!-- move over word --> 
+      <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,</autogen>
+      <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,</autogen>
 
+      <!-- up/down 7 times -->
+      <autogen>__KeyToKey__ KeyCode::P, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP,</autogen>
+      <autogen>__KeyToKey__ KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN,</autogen>
+
+      <!-- PageUp/PageDown -->
+      <autogen>__KeyToKey__ KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::PAGEUP,</autogen>
+      <autogen>__KeyToKey__ KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::PAGEDOWN,</autogen>
+
+      <!-- Yank --> 
       <autogen>__KeyToKey__ KeyCode::Y, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::V, ModifierFlag::COMMAND_L,</autogen>
 
+      <!-- Begin/End of Line -->
       <autogen>__KeyToKey__ KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,</autogen>
       <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,</autogen>
       
+      <!-- Kill --> 
       <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE,</autogen>
 
+      <!-- Copy --> 
       <autogen>__KeyToKey__ KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::C, ModifierFlag::COMMAND_L,</autogen>
 
-      <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,</autogen>
-      <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,</autogen>
-      
-      <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::FORWARD_DELETE, ModifierFlag::OPTION_L,</autogen>
+      <!-- Find -->
       <autogen>__KeyToKey__ KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,KeyCode::F, ModifierFlag::COMMAND_L,</autogen>
+
+      <!-- Give Up -->
       <autogen>__KeyToKey__ KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::ESCAPE</autogen>
 
+      <!-- Undo/Redo -->
       <autogen>__KeyToKey__ KeyCode::MINUS, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::Z, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,</autogen>
       <autogen>__KeyToKey__ KeyCode::MINUS, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::Z, ModifierFlag::COMMAND_L,</autogen>
+
+      <!-- End/Begin -->
       <autogen>__KeyToKey__ KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::HOME,</autogen>
       <autogen>__KeyToKey__ KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::END,</autogen>
     </item>
