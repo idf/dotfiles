@@ -59,7 +59,13 @@
         <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END,</autogen> 
         <autogen>__KeyToKey__ KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::HOME, ModifierFlag::OPTION_L,</autogen>
         <autogen>__KeyToKey__ KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, KeyCode::END, ModifierFlag::OPTION_L,</autogen>
-        <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::END | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE,</autogen>
+        <autogen>__KeyToKey__ KeyCode::Y, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::V, ModifierFlag::COMMAND_L, KeyCode::END,</autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+          KeyCode::END | ModifierFlag::SHIFT_L, 
+          KeyCode::X, ModifierFlag::COMMAND_L,
+        </autogen>
       </block>
 
       <!-- Del --> 
@@ -75,7 +81,7 @@
       <autogen>__KeyToKey__ KeyCode::B, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_LEFT,</autogen>
       <autogen>__KeyToKey__ KeyCode::F, VK_CONTROL | ModifierFlag::NONE, KeyCode::CURSOR_RIGHT,</autogen>
 
-      <!-- move over word --> 
+      <!-- Move Over Word --> 
       <autogen>__KeyToKey__ KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,</autogen>
       <autogen>__KeyToKey__ KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,</autogen>
 
@@ -95,7 +101,12 @@
       <autogen>__KeyToKey__ KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,</autogen>
       
       <!-- Kill --> 
-      <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L, KeyCode::FORWARD_DELETE,</autogen>
+      <autogen>
+        __KeyToKey__ 
+        KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, 
+        KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L, 
+        KeyCode::X, ModifierFlag::COMMAND_L,
+      </autogen>
 
       <!-- Copy --> 
       <autogen>__KeyToKey__ KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::C, ModifierFlag::COMMAND_L,</autogen>
@@ -136,6 +147,31 @@
         <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::NONE, KeyCode::Z, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0,</autogen>
         <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::NONE, KeyCode::W, ModifierFlag::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0,</autogen>
         <autogen>__KeyToKey__ KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,                                      KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0</autogen>
+        <!-- duplicate --> 
+        <block><!-- override -->
+          <only>BAKOMA</only>
+          <autogen>
+          __KeyToKey__ 
+          KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+          KeyCode::END | ModifierFlag::SHIFT_L, 
+          KeyCode::C, ModifierFlag::COMMAND_L, 
+          KeyCode::END, 
+          KeyCode::RETURN, 
+          KeyCode::V, ModifierFlag::COMMAND_L, 
+          KeyCode::END, 
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0
+        </autogen>
+        </block>
+        <autogen>
+          __KeyToKey__ 
+          KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L, 
+          KeyCode::C, ModifierFlag::COMMAND_L, 
+          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+          KeyCode::RETURN, 
+          KeyCode::V, ModifierFlag::COMMAND_L, 
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core_0
+        </autogen>
       </item>
       <item>
         <name>Enable Control+X</name>
