@@ -64,8 +64,7 @@
         <autogen>
           __KeyToKey__
           KeyCode::FORWARD_DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
-          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
-          KeyCode::FORWARD_DELETE,
+          KeyCode::FORWARD_DELETE, ModifierFlag::COMMAND_L,
         </autogen>
         <autogen>
           __KeyToKey__
@@ -73,6 +72,48 @@
           KeyCode::END | ModifierFlag::SHIFT_L, 
           KeyCode::X, ModifierFlag::COMMAND_L,
           KeyCode::FORWARD_DELETE,
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::FORWARD_DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+          KeyCode::FORWARD_DELETE, ModifierFlag::COMMAND_L,
+        </autogen>
+
+        <!-- auto-close -->
+        <autogen>
+          __KeyToKey__
+          KeyCode::KEY_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::KEY_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::KEY_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::CURSOR_LEFT,
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::KEY_9, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::KEY_9, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::KEY_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::CURSOR_LEFT,
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::QUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::QUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::QUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::CURSOR_LEFT,
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::CURSOR_LEFT,
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          KeyCode::CURSOR_LEFT,
         </autogen>
       </block>
       

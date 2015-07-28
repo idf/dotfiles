@@ -22,6 +22,8 @@ function doIt() {
 		continue;;
 	    .git)
 		continue;;
+	    .DS_Store)
+		continue;;
 	    *)
 		ln $flag "$cur/${dotfile}" $home;
 		;;
