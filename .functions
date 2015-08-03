@@ -276,6 +276,10 @@ ip2geo() {
     curl -A "" ipinfo.io/"$1";  # make empty header to request json 
 }
 
+meminfo_linux() {
+    egrep --color 'Mem|Cache|Swap' /proc/meminfo;
+}
+
 #######################################
 # Applications
 #######################################

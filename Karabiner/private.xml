@@ -71,7 +71,6 @@
           KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
           KeyCode::END | ModifierFlag::SHIFT_L, 
           KeyCode::X, ModifierFlag::COMMAND_L,
-          KeyCode::FORWARD_DELETE,
         </autogen>
         <autogen>
           __KeyToKey__
@@ -116,6 +115,57 @@
           KeyCode::CURSOR_LEFT,
         </autogen>
       </block>
+      <!-- keypad -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_0,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_1, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_1,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_2,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_3, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_3,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_4,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_5, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_5,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_6, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_6,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_7,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_8, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_8,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::KEY_9, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::KEYPAD_9,
+      </autogen>
       
       <!-- Del --> 
       <autogen>__KeyToKey__ KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::FORWARD_DELETE,</autogen>
