@@ -28,7 +28,6 @@
 (el-get-install 'company-anaconda)
 (el-get-install 'multiple-cursors)
 (el-get-install 'smex)
-(el-get-install 'org-mode)
 (el-get-install 'helm)
 
 ; company-mode
