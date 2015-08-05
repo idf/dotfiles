@@ -311,3 +311,25 @@ if [[ `uname` == 'Darwin' ]]; then
 	open -a "Preview.app" "$@";
     }
 fi
+
+
+## Git
+alias ghm="git push origin master";
+alias ghd="git push origin develop";
+alias glm="git pull origin master";
+alias gld="git pull origin develop";
+alias gst="git status -sb";
+
+ghcur() {
+    branch_name=$(git symbolic-ref --short -q HEAD);
+    git push origin $branch_name;
+}
+
+glcur() {
+    branch_name=$(git symbolic-ref --short -q HEAD);
+    git pull origin $branch_name;
+}
+
+gcam() {
+    git commit -am "$@";
+}

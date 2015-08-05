@@ -7,12 +7,6 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-## Git
-alias ghm="git push origin master"
-alias ghd="git push origin develop"
-alias glm="git pull origin master"
-alias gld="git pull origin develop"
-alias gst="git status -sb"
 
 alias sadd="ssh-add $HOME/.ssh/id_rsa"
 
