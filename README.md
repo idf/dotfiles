@@ -54,23 +54,12 @@ To update config:
 tmux source-file ~/.tmux.conf
 ```
 
-## Tmux-Session Save & Restore
-First need to check the permission:
-```
-sudo chmod 755 ./bin/tmux-session 
-```
-
-To save current session (saved to `~/.tmux-session`):
-```
-tmux-session save
-```
-
-To restore previously saved session:
-```
-tmux-session restore
-```
-
+## Tmux Session Save & Restore
 Using [tmuxp](https://github.com/tony/tmuxp):  
+```
+sudo pip install tmuxp
+```
+
 save 
 ```
 tmuxp freeze [-y] <session_name> 
