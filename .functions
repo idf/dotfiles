@@ -280,6 +280,10 @@ meminfo_linux() {
     egrep --color 'Mem|Cache|Swap' /proc/meminfo;
 }
 
+diskinfo() {
+    df -h;
+}
+
 #######################################
 # Applications
 #######################################
