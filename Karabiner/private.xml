@@ -20,6 +20,11 @@
     <appname>MS</appname>
     <prefix>com.microsoft.</prefix>
   </appdef>
+  <appdef>
+    <appname>OSX</appname>
+    <equal>com.apple.systempreferences</equal>
+  </appdef>
+
 
   <replacementdef>
     <replacementname>EMACS_MODE_IGNORE_APPS_0</replacementname>
@@ -34,6 +39,7 @@
       VI,
       VIRTUALMACHINE,
       X11,
+      OSX,
     </replacementvalue>
   </replacementdef>
 
@@ -66,18 +72,17 @@
           KeyCode::FORWARD_DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
           KeyCode::FORWARD_DELETE, ModifierFlag::COMMAND_L,
         </autogen>
-        <autogen>
+	<autogen><!-- fit screen -->
+	  __KeyToKey__
+          KeyCode::MINUS, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::F7, ModifierFlag::OPTION_L,
+	</autogen>
+        <autogen><!-- kill line -->
           __KeyToKey__
           KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
           KeyCode::END | ModifierFlag::SHIFT_L, 
           KeyCode::X, ModifierFlag::COMMAND_L,
         </autogen>
-        <autogen>
-          __KeyToKey__
-          KeyCode::FORWARD_DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
-          KeyCode::FORWARD_DELETE, ModifierFlag::COMMAND_L,
-        </autogen>
-
         <!-- auto-close -->
         <autogen>
           __KeyToKey__
