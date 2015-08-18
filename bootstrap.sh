@@ -30,9 +30,6 @@ function doIt() {
 	esac
     done
 
-    # bashmarks
-    bash bootstrap_bashmarks.sh;
-
     ln $flag "$cur/tmux-config/.tmux.conf" $home;
     source ~/.bashrc;
     tmux source-file ~/.tmux.conf;  # TODO handle tmux not started 
