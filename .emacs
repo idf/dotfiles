@@ -3,6 +3,8 @@
 (setq auto-save-default nil)  ; no auto-save
 (global-linum-mode t)  ; show line number
 (setq linum-format "%4d ")
+(set-face-background 'linum "black")
+(set-face-foreground 'linum "#3F3F3F")
 (setq vc-follow-symlinks t)  ; auto follow symbolic links
 (electric-pair-mode 1)  ; pairing brackets
 (setq frame-background-mode 'dark)
