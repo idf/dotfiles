@@ -1,4 +1,4 @@
-;; Editors 
+;; Editors
 (setq make-backup-files nil)  ; no backup
 (setq auto-save-default nil)  ; no auto-save
 (global-linum-mode t)  ; show line number
@@ -8,6 +8,8 @@
 (setq vc-follow-symlinks t)  ; auto follow symbolic links
 (electric-pair-mode 1)  ; pairing brackets
 (setq frame-background-mode 'dark)
+(setq company-idle-delay 0)  ; autocomplete delay
+(add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
 ;; pbcopy
 (defun pbcopy ()
@@ -83,9 +85,9 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ; org-mode
-; for *.org 
+; for *.org
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))  ; new line
 
 ; helm
 (require 'helm-config)
-(global-set-key (kbd "M-h") 'helm-M-x)  ; upper case 
+(global-set-key (kbd "M-h") 'helm-M-x)  ; upper case
