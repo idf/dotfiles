@@ -9,8 +9,8 @@ alias -- -="cd -"
 # Shortcuts
 
 alias sadd="ssh-add $HOME/.ssh/id_rsa"
-
 alias ec="emacsclient -t"
+alias eckill="emacsclient -e '(kill-emacs)'"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

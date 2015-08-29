@@ -2,9 +2,29 @@
 (setq make-backup-files nil)  ; no backup
 (setq auto-save-default nil)  ; no auto-save
 (global-linum-mode t)  ; show line number
+(setq linum-format "%4d ")
 (setq vc-follow-symlinks t)  ; auto follow symbolic links
-(electric-pair-mode 1)  ; pairing brackets 
+(electric-pair-mode 1)  ; pairing brackets
 (setq frame-background-mode 'dark)
+
+;; pbcopy
+(defun pbcopy ()
+  (interactive)
+  (call-process-region (point) (mark) "pbcopy")
+  (setq deactivate-mark t))
+
+(defun pbpaste ()
+  (interactive)
+  (call-process-region (point) (if mark-active (mark) (point)) "pbpaste" t t))
+
+(defun pbcut ()
+  (interactive)
+  (pbcopy)
+  (delete-region (region-beginning) (region-end)))
+
+(global-set-key (kbd "C-c c") 'pbcopy)
+(global-set-key (kbd "C-c v") 'pbpaste)
+(global-set-key (kbd "C-c x") 'pbcut)
 
 ;; el-get
 ; el-get is smooth is osx
