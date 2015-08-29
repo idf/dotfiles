@@ -1,15 +1,15 @@
 dotfiles
 ========
 
-shared dot files settings 
+shared dot files settings
 
 # To install
-under current directory  
+Under current directory
 ```bash
 bash bootstrap.sh
 ```
 
-install OS X defaults (need to log out and log in again)
+Install OS X defaults (need to log out and log in again)
 ```bash
 sudo bash ~/.osx
 ```
@@ -26,28 +26,32 @@ sudo bash ~/.osx
 * https://github.com/huyng/bashmarks
 
 # Karabiner
-To enable system-wide emacs mode, `cd Karabiner` and run the `bootstrap.sh` to install `private.xml` into Karabiner. Enable the private settings under the Karabiner preference panel.  
+To enable system-wide emacs mode, `cd Karabiner` and run the `bootstrap.sh` to install `private.xml` into Karabiner. Enable the private settings under the Karabiner preference panel.
+
 Download [Karabiner](https://pqrs.org/osx/karabiner/)
 
 # Keylayouts
-Keylayouts are in `./keylayout`  (edited by [Ukelele](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ukelele))  
-To enable your new layout you must save it into your '~/Library/Keyboard Layouts', and then enable it from System Preferences -> Keyboard -> Input Sources.  
+Keylayouts are in `./keylayout`  (edited by [Ukelele](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ukelele))
+
+To enable your new layout you must save it into your '~/Library/Keyboard Layouts', and then enable it from System Preferences -> Keyboard -> Input Sources.
 This only words in Cocoa apps; therefore, Karabiner in the above sections are preferred.
 
 # Key Bindings
-KeyBindings are in `./KeyBindings`  
-DefaultKeyBinding.dict doesn't work in some applications like Xcode or Firefox. Key combinations that enter dead key states (like opt+U in the U.S. keyboard layout) can't be reassigned.  
-This only words in Cocoa apps; therefore, Karabiner in the above sections are preferred. 
+KeyBindings are in `./KeyBindings`
 
-[default keybindings](https://www.hcs.harvard.edu/~jrus/site/system-bindings.html)  
+DefaultKeyBinding.dict doesn't work in some applications like Xcode or Firefox. Key combinations that enter dead key states (like opt+U in the U.S. keyboard layout) can't be reassigned.
+
+This only words in Cocoa apps; therefore, Karabiner in the above sections are preferred.
+
+[default keybindings](https://www.hcs.harvard.edu/~jrus/site/system-bindings.html)
 [emacs keybindings](http://www.hcs.harvard.edu/~jrus/site/KeyBindings/Emacs%20Esc%20Bindings.dict)
 
 # Bashmarks
-[cheatsheet](https://github.com/huyng/bashmarks)
+[bashmarks cheatsheet](https://github.com/huyng/bashmarks)
 
 # Tmux
 ## Basics
-[tmux_cheatsheet](https://gist.github.com/henrik/1967800)  
+[tmux cheatsheet](https://gist.github.com/idf/b220ec68197ae824a67a)
 
 To update config:
 ```
@@ -55,17 +59,17 @@ tmux source-file ~/.tmux.conf
 ```
 
 ## Tmux Session Save & Restore
-Using [tmuxp](https://github.com/tony/tmuxp):  
+Using [tmuxp](https://github.com/tony/tmuxp):
 ```
 sudo pip install tmuxp
 ```
 
-save 
+save
 ```
-tmuxp freeze [-y] <session_name> 
+tmuxp freeze [-y] <session_name>
 ```
 
-reload 
+reload
 ```
 tmuxp load <filename>
 ```
