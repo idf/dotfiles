@@ -252,7 +252,7 @@ fi
 source $HOME/env.sh
 if [ ! -f "$HOME/ssh_profile.sh" ]; then
     echo "# ssh -l USENAME sub.site.com -p PORT" > $HOME/ssh_profile.sh;
-fi 
+fi
 source $HOME/ssh_profile.sh
 source $HOME/.local/bin/bashmarks.sh  # bashmarks
 
@@ -273,7 +273,7 @@ cp_cur_path_clipboard() {
 }
 
 ip2geo() {
-    curl -A "" ipinfo.io/"$1";  # make empty header to request json 
+    curl -A "" ipinfo.io/"$1";  # make empty header to request json
 }
 
 meminfo_linux() {
@@ -288,27 +288,27 @@ diskinfo() {
 # Applications
 #######################################
 if [[ `uname` == 'Darwin' ]]; then
-    # Microsoft Office 
+    # Microsoft Office
     word() {
 	open -a "Microsoft Word.app" "$@";
     }
-    
+
     ppt() {
 	open -a "Microsoft PowerPoint.app" "$@";
     }
-    
+
     excel() {
 	open -a "Microsoft Excel.app" "$@";
     }
 
-    # Editors 
+    # Editors
     sublime() {
 	open -a "Sublime Text.app" "$@";
     }
 
     # Readers
     skim() {
-	open -a "Skim.app" "$@"; 
+	open -a "Skim.app" "$@";
     }
 
     preview() {
@@ -336,4 +336,9 @@ glcur() {
 
 gcam() {
     git commit -am "$@";
+}
+
+# remove using regex
+rmre() {
+    find . -name "$1" -exec rm -rf "{}" \;
 }
