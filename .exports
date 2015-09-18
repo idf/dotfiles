@@ -25,3 +25,6 @@ export PATH;
 
 # Always enable colored `grep` output
 # export GREP_OPTIONS="--color=auto";  # issues with git-bash
+
+# cheat
+ export CHEATCOLORS=true
