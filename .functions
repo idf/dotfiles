@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Simple calculator
+# Funciton utils
 function call() {
-    echo "calling: $1 $@"
+    echo "calling: $1"
     eval $1;
 }
+
+# Simple calculator
 function calc() {
     local result="";
     result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
@@ -273,11 +275,11 @@ cd() {
 }
 
 cp_cur_path_clipboard() {
-    pwd | pbcopy;
+    call "pwd | pbcopy";
 }
 
 ip2geo() {
-    curl -A "" ipinfo.io/"$1";  # make empty header to request json
+    call "curl -A \"\" ipinfo.io/\"$1\"";  # make empty header to request json
 }
 
 meminfo_linux() {
@@ -285,7 +287,7 @@ meminfo_linux() {
 }
 
 diskinfo() {
-    df -h;
+    call "df -h";
 }
 
 #######################################
@@ -322,11 +324,22 @@ fi
 
 
 ## Git
-alias ghm="git push origin master";
-alias ghd="git push origin develop";
-alias glm="git pull origin master";
-alias gld="git pull origin develop";
-alias gst="git status -sb";
+
+ghm() {
+    call "git push origin master";
+}
+ghd() {
+    call "git push origin develop";
+}
+glm() {
+    call "git pull origin master";
+}
+gld() {
+    call "git pull origin develop";
+}
+gst() {
+    call "git status -sb";
+}
 
 ghcur() {
     branch_name=$(git symbolic-ref --short -q HEAD);
@@ -339,7 +352,7 @@ glcur() {
 }
 
 gcam() {
-    call 'git commit -am "$@"';
+    call "git commit -am \"$@\"";
 }
 
 # remove using regex
@@ -348,6 +361,6 @@ rmre() {
 }
 
 
-display_res (){
+display_res() {
     call "system_profiler SPDisplaysDataType";
 }
