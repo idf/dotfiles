@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 # Simple calculator
+function call() {
+    echo "calling: $1 $@"
+    eval $1;
+}
 function calc() {
     local result="";
     result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
@@ -335,10 +339,15 @@ glcur() {
 }
 
 gcam() {
-    git commit -am "$@";
+    call 'git commit -am "$@"';
 }
 
 # remove using regex
 rmre() {
     find . -name "$1" -exec rm -rf "{}" \;
+}
+
+
+display_res (){
+    call "system_profiler SPDisplaysDataType";
 }
