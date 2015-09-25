@@ -72,11 +72,16 @@
           KeyCode::FORWARD_DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
           KeyCode::FORWARD_DELETE, ModifierFlag::COMMAND_L,
         </autogen>
-	<autogen><!-- fit screen -->
-	  __KeyToKey__
+        <autogen><!-- fit screen -->
+          __KeyToKey__
           KeyCode::MINUS, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
           KeyCode::F7, ModifierFlag::OPTION_L,
-	</autogen>
+        </autogen>
+        <autogen><!-- full screen -->
+          __KeyToKey__
+          KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        </autogen>
         <autogen><!-- kill line -->
           __KeyToKey__
           KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
