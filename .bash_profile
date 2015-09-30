@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 export ALTERNATE_EDITOR="";  # to make emacs --daemon auto start
@@ -52,4 +54,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # Source
 if [ -f /usr/local/bin/tmuxp.bash ]; then
     source tmuxp.bash  # sudo pip install tmuxp
-fi; 
+fi;

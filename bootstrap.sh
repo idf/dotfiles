@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 flag="-nfs";
 cur=$(pwd);
 cd $cur;
@@ -9,11 +10,11 @@ function doIt() {
     if [ "$(uname)" == "Darwin" ]; then
 	ln $flag "$cur/init" $home;
     fi
-    
+
     # usr bin files
     ln $flag "$cur/bin" $home;
 
-    # dotfiles 
+    # dotfiles
     for dotfile in .?*; do
 	case $dotfile in
 	    *.elc)
@@ -32,7 +33,7 @@ function doIt() {
 
     ln $flag "$cur/tmux-config/.tmux.conf" $home;
     source ~/.bashrc;
-    tmux source-file ~/.tmux.conf;  # TODO handle tmux not started 
+    tmux source-file ~/.tmux.conf;  # TODO handle tmux not started
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
