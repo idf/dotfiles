@@ -360,7 +360,15 @@ rmre() {
     find . -name "$1" -exec rm -rf "{}" \;
 }
 
-
 display_res() {
     call "system_profiler SPDisplaysDataType";
+}
+
+pyc() {
+    call "python -m compileall -l .";
+}
+
+downall() {
+    # take url as argument
+    call "wget -r -nd -np --reject=\"index.html*\" -e robots=off $1"
 }
