@@ -324,6 +324,11 @@ fi
 
 
 ## Git
+ginit() {
+    git init;
+    ln ~/.gitattributes;
+    ln ~/.gitignore;
+}
 
 ghm() {
     call "git push origin master";
