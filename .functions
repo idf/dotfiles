@@ -377,3 +377,13 @@ downall() {
     # take url as argument
     call "wget -r -nd -np --reject=\"index.html*\" -e robots=off $1"
 }
+
+clean_tex() {
+    echo "Removing auto generated files in TeX IDE..."
+    rm -r **/*.Backup;
+    rm -r **/*.dvi;
+    rm -r **/*.ddf;
+    rm -r **/*.bb;
+    rm -r **/*.aux;
+    rm -r **/*.toc **/*.log **/*.out **/*.ind **/*.idx **/*.ilg;
+}
