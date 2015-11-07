@@ -274,8 +274,8 @@ cd() {
     builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a;
 }
 
-cp_cur_path_clipboard() {
-    call "pwd | pbcopy";
+cp_pwd() {
+    call "pwd | tr -d '\n' | pbcopy";
 }
 
 ip2geo() {
