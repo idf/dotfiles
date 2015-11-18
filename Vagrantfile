@@ -24,6 +24,7 @@ Vagrant.configure(2) do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 8000, host: 4567
+  config.vm.network :forwarded_port, guest: 80, host: 4568  # apache2
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
@@ -33,11 +34,11 @@ Vagrant.configure(2) do |config|
   if Vagrant.has_plugin?("vagrant-proxyconf")
     config.proxy.enabled = false
   end
-  
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.33.10" #  reserved private address space, for nfs
-  
+
   # config.vm.network "private_network", type: "dhcp"
 
   # Create a public network, which generally matched to bridged network.
@@ -54,7 +55,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant",
       :nfs => true,
       :mount_options => ['rw', 'vers=3', 'tcp', 'fsc']  # the fsc is for cachedfilesd
-    
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
