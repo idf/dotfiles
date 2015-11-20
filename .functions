@@ -387,3 +387,9 @@ tex_clean() {
     rm **/*.aux;
     rm **/*.toc **/*.log **/*.out **/*.ind **/*.idx **/*.ilg;
 }
+
+grep_wd() {
+    # globally search a regular expression and print
+    # grep current working directory
+    call "grep -rnw . -e \"$1\"";
+}
