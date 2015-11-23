@@ -55,3 +55,5 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 if [ -f /usr/local/bin/tmuxp.bash ]; then
     source tmuxp.bash  # sudo pip install tmuxp
 fi;
+
+eval "$(thefuck --alias funk)";
