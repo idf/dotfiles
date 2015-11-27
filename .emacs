@@ -53,6 +53,8 @@
 (el-get-install 'multiple-cursors)
 (el-get-install 'smex)
 (el-get-install 'helm)
+(el-get-install 'haskell-mode)
+(el-get-install 'neotree)
 
 ; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
@@ -91,3 +93,7 @@
 ; helm
 (require 'helm-config)
 (global-set-key (kbd "M-h") 'helm-M-x)  ; upper case
+
+; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
