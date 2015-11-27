@@ -8,8 +8,11 @@
 (setq vc-follow-symlinks t)  ; auto follow symbolic links
 (electric-pair-mode 1)  ; pairing brackets
 (setq frame-background-mode 'dark)
-(setq company-idle-delay 0)  ; autocomplete delay
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
+
+;; company
+(setq company-idle-delay 0)  ; autocomplete delay
+(setq company-minimum-prefix-length 2)
 
 ;; pbcopy
 (defun pbcopy ()
@@ -56,11 +59,16 @@
 (el-get-install 'haskell-mode)
 (el-get-install 'neotree)
 
-; company-mode
+;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'python-mode-hook 'anaconda-mode
   (lambda ()
     (setq-local company-backends '((company-anaconda)))))
+
+(with-eval-after-load 'company  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 ;; jedi:setup, replaced by anaconda-mode
 ; (add-hook 'python-mode-hook 'jedi:setup)
@@ -71,7 +79,7 @@
 
 )
 
-; Keybindings
+;; Keybindings
 ; move cursor multiple lines
 (global-set-key (kbd "M-n")
 		(lambda () (interactive) (next-line 7)))
@@ -81,19 +89,19 @@
 
 (global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not work in osx
 
-; smex
+;; smex
 (global-set-key (kbd "M-x") 'smex)  ; $ chmod 777 ~/.emacs.d/smex-items
 (global-set-key (kbd "M-X") 'smex-major-mode-commands) ; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-; org-mode
+;; org-mode
 ; for *.org
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))  ; new line
 
-; helm
+;; helm
 (require 'helm-config)
 (global-set-key (kbd "M-h") 'helm-M-x)  ; upper case
 
-; neotree
+;; neotree
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
