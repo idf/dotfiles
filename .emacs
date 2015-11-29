@@ -1,14 +1,21 @@
 ;; Editors
+; file
 (setq make-backup-files nil)  ; no backup
 (setq auto-save-default nil)  ; no auto-save
+(setq vc-follow-symlinks t)  ; auto follow symbolic links
+
+; file content
+(setq-default indent-tabs-mode nil)  ; disable tab
+(electric-pair-mode 1)  ; pairing brackets
+(add-to-list 'write-file-functions 'delete-trailing-whitespace)
+
+; line number
 (global-linum-mode t)  ; show line number
 (setq linum-format "%4d ")
 (set-face-background 'linum "black")
 (set-face-foreground 'linum "#3F3F3F")
-(setq vc-follow-symlinks t)  ; auto follow symbolic links
-(electric-pair-mode 1)  ; pairing brackets
 (setq frame-background-mode 'dark)
-(add-to-list 'write-file-functions 'delete-trailing-whitespace)
+
 
 ;; company
 (setq company-idle-delay 0)  ; autocomplete delay
@@ -38,11 +45,11 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil 'noerror)
-    (with-current-buffer
-	(url-retrieve-synchronously
-	 "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-        (goto-char (point-max))
-	(eval-print-last-sexp)))
+  (with-current-buffer
+    (url-retrieve-synchronously
+      "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
@@ -82,9 +89,9 @@
 ;; Keybindings
 ; move cursor multiple lines
 (global-set-key (kbd "M-n")
-		(lambda () (interactive) (next-line 7)))
+  (lambda () (interactive) (next-line 7)))
 (global-set-key (kbd "M-p")
-		(lambda () (interactive) (previous-line 7)))
+  (lambda () (interactive) (previous-line 7)))
 (global-set-key (kbd "C-m") 'newline-and-indent)  ; indentation
 
 (global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not work in osx
