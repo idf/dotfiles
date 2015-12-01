@@ -112,3 +112,13 @@
 ;; neotree
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+;; shell-mode
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8-unix)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)

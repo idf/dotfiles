@@ -2,7 +2,6 @@
 
 This config has support for [tmux-mem-cpu](http://github.com/thewtex/tmux-mem-cpu-load).
 
-Prefix mapped to Ctrl-A for `screen` users.
 
 Installation
 ------------
@@ -145,12 +144,16 @@ Commands
   * `Control + b` then `p` to previous window
   * `Control + b` then `[0-9]` move to window number
   * `Control + b` then `&` to kill window
- 
+
   Scroll in Mac
-  * `Control + b` then `[` then `j` to scroll the page up 
-  * `Control + b` then `[` then `k` to scroll the page down  
+  * `Control + b` then `[` then `j` to scroll the page up
+  * `Control + b` then `[` then `k` to scroll the page down
 
 by Tony Narlock (tony@git-pull.com)
 
 * Github: http://www.github.com/tony
 * Website: http://www.git-pull.com
+
+# Cheatsheet
+
+* zoom: `-z`
