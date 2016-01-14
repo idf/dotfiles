@@ -62,6 +62,7 @@
 (el-get-install 'company-anaconda)
 (el-get-install 'multiple-cursors)
 (el-get-install 'smex)
+(el-get-install 'expand-region)
 (el-get-install 'helm)
 (el-get-install 'haskell-mode)
 (el-get-install 'neotree)
@@ -123,3 +124,9 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (put 'upcase-region 'disabled nil)  ; C-x C-u
+
+
+;; expand-region
+(require 'expand-region)
+(global-set-key (kbd "M-+") 'er/expand-region)
+(global-set-key (kbd "M-_") 'er/contract-region)
