@@ -66,6 +66,7 @@
 (el-get-install 'helm)
 (el-get-install 'haskell-mode)
 (el-get-install 'neotree)
+(el-get-install 'js2-mode)
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
