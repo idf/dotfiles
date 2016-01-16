@@ -67,6 +67,7 @@
 (el-get-install 'haskell-mode)
 (el-get-install 'neotree)
 (el-get-install 'js2-mode)
+(el-get-install 'switch-window)
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
@@ -131,3 +132,7 @@
 (require 'expand-region)
 (global-set-key (kbd "M-+") 'er/expand-region)
 (global-set-key (kbd "M-_") 'er/contract-region)
+
+;; switch-window
+(require 'switch-window)
+(global-set-key (kbd "C-x o") 'switch-window)
