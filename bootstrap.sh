@@ -32,6 +32,7 @@ function doIt() {
     done
 
     ln $flag "$cur/tmux-config/.tmux.conf" $home;
+    ln $flag "$cur/rc.py" "$home/.percol.d/";
     source ~/.bashrc;
     tmux source-file ~/.tmux.conf;  # TODO handle tmux not started
 }
