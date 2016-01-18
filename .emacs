@@ -6,7 +6,7 @@
 
 ; file content
 (setq-default indent-tabs-mode nil)  ; disable tab
-(electric-pair-mode 1)  ; pairing brackets
+(setq-default indent-tabs-mode nil)  ; disable tab
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
 ; line number
@@ -16,10 +16,8 @@
 (set-face-foreground 'linum "#3F3F3F")
 (setq frame-background-mode 'dark)
 
-
-;; company
-(setq company-idle-delay 0)  ; autocomplete delay
-(setq company-minimum-prefix-length 2)
+; duplicate line
+(global-set-key "\C-x\C-d" "\C-a\C- \C-n\M-w\C-y")
 
 ;; pbcopy
 (defun pbcopy ()
@@ -68,8 +66,12 @@
 (el-get-install 'neotree)
 (el-get-install 'js2-mode)
 (el-get-install 'switch-window)
+(el-get-install 'magit)
 
 ;; company-mode
+(setq company-idle-delay 0)  ; autocomplete delay
+(setq company-minimum-prefix-length 2)
+
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'python-mode-hook 'anaconda-mode
   (lambda ()
@@ -79,11 +81,6 @@
   (define-key company-active-map (kbd "M-p") nil)
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
-
-;; jedi:setup, replaced by anaconda-mode
-; (add-hook 'python-mode-hook 'jedi:setup)
-; (setq jedi:complete-on-dot t)
-; (setq jedi:get-in-function-call-delay 10)
 
 (when (eq system-type 'darwin) ;; mac specific settings
 
@@ -127,7 +124,6 @@
 (prefer-coding-system 'utf-8)
 (put 'upcase-region 'disabled nil)  ; C-x C-u
 
-
 ;; expand-region
 (require 'expand-region)
 (global-set-key (kbd "M-+") 'er/expand-region)
@@ -136,3 +132,6 @@
 ;; switch-window
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
+
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
