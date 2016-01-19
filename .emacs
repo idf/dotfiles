@@ -15,6 +15,7 @@
 (set-face-background 'linum "black")
 (set-face-foreground 'linum "#3F3F3F")
 (setq frame-background-mode 'dark)
+; fringe does not working in tty mode
 
 ; duplicate line
 (global-set-key "\C-x\C-d" "\C-a\C- \C-n\M-w\C-y")
@@ -67,6 +68,7 @@
 (el-get-install 'js2-mode)
 (el-get-install 'switch-window)
 (el-get-install 'magit)
+(el-get-install 'git-gutter)
 
 ;; company-mode
 (setq company-idle-delay 0)  ; autocomplete delay
@@ -135,3 +137,24 @@
 
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; git-gutter
+(global-git-gutter-mode +1)
+(custom-set-variables
+ '(git-gutter:unchanged-sign " ")
+ '(git-gutter:modified-sign " ")
+ '(git-gutter:added-sign " ")
+ '(git-gutter:deleted-sign " ")
+ '(git-gutter:update-interval 1))  ; not real-time
+
+(git-gutter:linum-setup)
+
+(set-face-background 'git-gutter:unchanged "black")
+(set-face-background 'git-gutter:added "green")
+(set-face-background 'git-gutter:deleted "red")
+(set-face-background 'git-gutter:modified "purple")
+
+(global-set-key (kbd "C-x v p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-x v n") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+(global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
