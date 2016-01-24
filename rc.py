@@ -1,4 +1,6 @@
-# Emacs like
+# Emacs like key bindings for percol
+# `sudo pip install percol`
+# Usage: `ps aux | percol`
 percol.import_keymap({
     "C-h" : lambda percol: percol.command.delete_backward_char(),
     "C-d" : lambda percol: percol.command.delete_forward_char(),
