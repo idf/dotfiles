@@ -175,6 +175,7 @@
         (add-hook (intern (format "%s-hook" (symbol-name mode))) 'smartparens-strict-mode))
       sp--lisp-modes)
 
+; https://ebzzry.github.io/emacs-pairs.html
 (defmacro def-pairs (pairs)
   `(progn
      ,@(loop for (key . val) in pairs
