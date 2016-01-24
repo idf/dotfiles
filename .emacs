@@ -69,6 +69,7 @@
 (el-get-install 'switch-window)
 (el-get-install 'magit)
 (el-get-install 'git-gutter)
+(el-get-install 'smartparens)
 
 ;; company-mode
 (setq company-idle-delay 0)  ; autocomplete delay
@@ -158,3 +159,6 @@
 (global-set-key (kbd "C-x v n") 'git-gutter:next-hunk)
 (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+
+;;smartparens
+(require 'smartparens-config)
