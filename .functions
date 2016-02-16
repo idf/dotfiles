@@ -396,5 +396,6 @@ grep_wd() {
 
 
 function git_updatetimestamp() {
+    # change to current date
     GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`";
 }
