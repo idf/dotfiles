@@ -399,3 +399,8 @@ function git_updatetimestamp() {
     # change to current date
     GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`";
 }
+
+function git_amendtimestamp() {
+    # take an argument: "Wed Feb 16 14:00 2011 +0100"
+    git commit --amend --date="$1";
+}
