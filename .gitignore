@@ -274,3 +274,6 @@ bower_components/
 *.bb
 *.dvi
 *.dvv
+
+*.db
+*.db-journal

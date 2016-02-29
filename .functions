@@ -405,3 +405,13 @@ function githq() {
         GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`";
     fi
 }
+
+function permission_gain() {
+    # take path to file as param
+    sudo chown -R $(whoami) "$1";
+}
+
+function pst_timezone() {
+    sudo rm -f /etc/localtime;
+    sudo ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime;
+}
