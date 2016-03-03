@@ -2,13 +2,13 @@
 # Funciton utils
 function call() {
     echo "calling: $1"
-    eval $1;
+    eval $1
 }
 
 # Simple calculator
 function calc() {
-    local result="";
-    result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
+    local result=""
+    result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
     #                       └─ default (when `--mathlib` is used) is 20
     #
     if [[ "$result" == *.* ]]; then
@@ -18,25 +18,25 @@ function calc() {
 	    -e 's/^-\./-0./'      \
 		    -e 's/0*$//;s/\.$//';  # remove trailing zeros
     else
-	printf "$result";
-    fi;
-    printf "\n";
+	printf "$result"
+    fi
+    printf "\n"
 }
 
 # Create a new directory and enter it
 function mkd() {
-    mkdir -p "$@" && cd "$_";
+    mkdir -p "$@" && cd "$_"
 }
 
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
-    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
-    local tmpFile="${@%/}.tar";
-    tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+    local tmpFile="${@%/}.tar"
+    tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
 
     size=$(
 	stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
@@ -46,110 +46,110 @@ function targz() {
     local cmd="";
     if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
 	# the .tar file is smaller than 50 MB and Zopfli is available; use it
-	cmd="zopfli";
+	cmd="zopfli"
     else
 	if hash pigz 2> /dev/null; then
-	    cmd="pigz";
+	    cmd="pigz"
 	else
-	    cmd="gzip";
-	fi;
-    fi;
+	    cmd="gzip"
+	fi
+    fi
 
-    echo "Compressing .tar using \`${cmd}\`…";
-    "${cmd}" -v "${tmpFile}" || return 1;
-    [ -f "${tmpFile}" ] && rm "${tmpFile}";
-    echo "${tmpFile}.gz created successfully.";
+    echo "Compressing .tar using \`${cmd}\`..."
+    "${cmd}" -v "${tmpFile}" || return 1
+    [ -f "${tmpFile}" ] && rm "${tmpFile}"
+    echo "${tmpFile}.gz created successfully."
 }
 
 # Determine size of a file or total size of a directory
 function fs() {
     if du -b /dev/null > /dev/null 2>&1; then
-	local arg=-sbh;
+	local arg=-sbh
     else
-	local arg=-sh;
+	local arg=-sh
     fi
     if [[ -n "$@" ]]; then
-	du $arg -- "$@";
+	du $arg -- "$@"
     else
-	du $arg .[^.]* *;
-    fi;
+	du $arg .[^.]* *
+    fi
 }
 
 # Use Git’s colored diff when available
-hash git &>/dev/null;
+hash git &>/dev/null
 if [ $? -eq 0 ]; then
     function diff() {
-	git diff --no-index --color-words "$@";
+	git diff --no-index --color-words "$@"
     }
-fi;
+fi
 
 # Create a data URL from a file
 function dataurl() {
-    local mimeType=$(file -b --mime-type "$1");
+    local mimeType=$(file -b --mime-type "$1")
     if [[ $mimeType == text/* ]]; then
-	mimeType="${mimeType};charset=utf-8";
+	mimeType="${mimeType};charset=utf-8"
     fi
-    echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
+    echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
 # Create a git.io short URL
 function gitio() {
     if [ -z "${1}" -o -z "${2}" ]; then
-	echo "Usage: \`gitio slug url\`";
-	return 1;
-    fi;
-    curl -i http://git.io/ -F "url=${2}" -F "code=${1}";
+	echo "Usage: \`gitio slug url\`"
+	return 1
+    fi
+    curl -i http://git.io/ -F "url=${2}" -F "code=${1}"
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
-    local port="${1:-8000}";
+    local port="${1:-8000}"
     sleep 1 && open "http://localhost:${port}/" &
     # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
     # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-    python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
+    python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
 # Start a PHP server from a directory, optionally specifying the port
 # (Requires PHP 5.4.0+.)
 function phpserver() {
-    local port="${1:-4000}";
+    local port="${1:-4000}"
     local ip=$(ipconfig getifaddr en1);
     sleep 1 && open "http://${ip}:${port}/" &
-    php -S "${ip}:${port}";
+    php -S "${ip}:${port}"
 }
 
 # Compare original and gzipped file size
 function gz() {
-    local origsize=$(wc -c < "$1");
-    local gzipsize=$(gzip -c "$1" | wc -c);
-    local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
-    printf "orig: %d bytes\n" "$origsize";
-    printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
+    local origsize=$(wc -c < "$1")
+    local gzipsize=$(gzip -c "$1" | wc -c)
+    local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l)
+    printf "orig: %d bytes\n" "$origsize"
+    printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
 }
 
 # Syntax-highlight JSON strings or files
 # Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
 function json() {
     if [ -t 0 ]; then # argument
-	python -mjson.tool <<< "$*" | pygmentize -l javascript;
+	python -mjson.tool <<< "$*" | pygmentize -l javascript
     else # pipe
-	python -mjson.tool | pygmentize -l javascript;
-    fi;
+	python -mjson.tool | pygmentize -l javascript
+    fi
 }
 
 # Run `dig` and display the most useful info
 function digga() {
-    dig +nocmd "$1" any +multiline +noall +answer;
+    dig +nocmd "$1" any +multiline +noall +answer
 }
 
 # UTF-8-encode a string of Unicode symbols
 function escape() {
-    printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u);
+    printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
     # print a newline unless we’re piping the output to another program
     if [ -t 1 ]; then
 	echo ""; # newline
-    fi;
+    fi
 }
 
 # Decode \x{ABCD}-style Unicode escape sequences
@@ -157,8 +157,8 @@ function unidecode() {
     perl -e "binmode(STDOUT, ':utf8'); print \"$@\"";
     # print a newline unless we’re piping the output to another program
     if [ -t 1 ]; then
-	echo ""; # newline
-    fi;
+	echo "" # newline
+    fi
 }
 
 # Get a character’s Unicode code point
@@ -166,42 +166,42 @@ function codepoint() {
     perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))";
     # print a newline unless we’re piping the output to another program
     if [ -t 1 ]; then
-	echo ""; # newline
-    fi;
+	echo "" # newline
+    fi
 }
 
 # Show all the names (CNs and SANs) listed in the SSL certificate
 # for a given domain
 function getcertnames() {
     if [ -z "${1}" ]; then
-	echo "ERROR: No domain specified.";
-	return 1;
-    fi;
+	echo "ERROR: No domain specified."
+	return 1
+    fi
 
-    local domain="${1}";
-    echo "Testing ${domain}…";
-    echo ""; # newline
+    local domain="${1}"
+    echo "Testing ${domain}..."
+    echo "" # newline
 
     local tmp=$(echo -e "GET / HTTP/1.0\nEOT" \
-	| openssl s_client -connect "${domain}:443" -servername "${domain}" 2>&1);
+	| openssl s_client -connect "${domain}:443" -servername "${domain}" 2>&1)
 
     if [[ "${tmp}" = *"-----BEGIN CERTIFICATE-----"* ]]; then
 	local certText=$(echo "${tmp}" \
 	    | openssl x509 -text -certopt "no_aux, no_header, no_issuer, no_pubkey, \
-			no_serial, no_sigdump, no_signame, no_validity, no_version");
-	echo "Common Name:";
-	echo ""; # newline
-	echo "${certText}" | grep "Subject:" | sed -e "s/^.*CN=//" | sed -e "s/\/emailAddress=.*//";
-	echo ""; # newline
-	echo "Subject Alternative Name(s):";
-	echo ""; # newline
+			no_serial, no_sigdump, no_signame, no_validity, no_version")
+	echo "Common Name:"
+	echo "" # newline
+	echo "${certText}" | grep "Subject:" | sed -e "s/^.*CN=//" | sed -e "s/\/emailAddress=.*//"
+	echo "" # newline
+	echo "Subject Alternative Name(s):"
+	echo "" # newline
 	echo "${certText}" | grep -A 1 "Subject Alternative Name:" \
-	    | sed -e "2s/DNS://g" -e "s/ //g" | tr "," "\n" | tail -n +2;
-	return 0;
+	    | sed -e "2s/DNS://g" -e "s/ //g" | tr "," "\n" | tail -n +2
+	return 0
     else
-	echo "ERROR: Certificate not found.";
-	return 1;
-    fi;
+	echo "ERROR: Certificate not found."
+	return 1
+    fi
 }
 
 ## `s` with no arguments opens the current directory in Sublime Text, otherwise
@@ -211,7 +211,7 @@ function getcertnames() {
 #	subl .;
 #    else
 #	subl "$@";
-#    fi;
+#    fi
 #}
 #
 ## `a` with no arguments opens the current directory in Atom Editor, otherwise
@@ -221,7 +221,7 @@ function getcertnames() {
 #	atom .;
 #    else
 #	atom "$@";
-#    fi;
+#    fi
 #}
 #
 ## `v` with no arguments opens the current directory in Vim, otherwise opens the
@@ -231,7 +231,7 @@ function getcertnames() {
 #	vim .;
 #    else
 #	vim "$@";
-#    fi;
+#    fi
 #}
 #
 ## `o` with no arguments opens the current directory, otherwise opens the given
@@ -241,7 +241,7 @@ function getcertnames() {
 #	open .;
 #    else
 #	open "$@";
-#    fi;
+#    fi
 #}
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
@@ -249,15 +249,15 @@ function getcertnames() {
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 function tre() {
-    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+    tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
 if [ ! -f "$HOME/env.sh" ]; then
-   touch $HOME/env.sh;
+   touch $HOME/env.sh
 fi
 source $HOME/env.sh
 if [ ! -f "$HOME/ssh_profile.sh" ]; then
-    echo "# ssh -l USENAME sub.site.com -p PORT" > $HOME/ssh_profile.sh;
+    echo "# ssh -l USENAME sub.site.com -p PORT" > $HOME/ssh_profile.sh
 fi
 source $HOME/ssh_profile.sh
 source $HOME/.local/bin/bashmarks.sh  # bashmarks
@@ -271,23 +271,23 @@ eval `ssh-agent -s`
 NC='\033[0m';
 bold='\033[1m';
 cd() {
-    builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a;
+    builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a
 }
 
 cp_pwd() {
-    call "pwd | tr -d '\n' | pbcopy";
+    call "pwd | tr -d '\n' | pbcopy"
 }
 
 ip2geo() {
-    call "curl -A \"\" ipinfo.io/\"$1\"";  # make empty header to request json
+    call "curl -A \"\" ipinfo.io/\"$1\""  # make empty header to request json
 }
 
 meminfo_linux() {
-    egrep --color 'Mem|Cache|Swap' /proc/meminfo;
+    egrep --color 'Mem|Cache|Swap' /proc/meminfo
 }
 
 diskinfo() {
-    call "df -h";
+    call "df -h"
 }
 
 #######################################
@@ -296,68 +296,68 @@ diskinfo() {
 if [[ `uname` == 'Darwin' ]]; then
     # Microsoft Office
     word() {
-	open -a "Microsoft Word.app" "$@";
+	open -a "Microsoft Word.app" "$@"
     }
 
     ppt() {
-	open -a "Microsoft PowerPoint.app" "$@";
+	open -a "Microsoft PowerPoint.app" "$@"
     }
 
     excel() {
-	open -a "Microsoft Excel.app" "$@";
+	open -a "Microsoft Excel.app" "$@"
     }
 
     # Editors
     sublime() {
-	open -a "Sublime Text.app" "$@";
+	open -a "Sublime Text.app" "$@"
     }
 
     # Readers
     skim() {
-	open -a "Skim.app" "$@";
+	open -a "Skim.app" "$@"
     }
 
     preview() {
-	open -a "Preview.app" "$@";
+	open -a "Preview.app" "$@"
     }
 fi
 
 
 ## Git
 ginit() {
-    git init;
-    ln ~/.gitattributes;
-    ln ~/.gitignore;
+    git init
+    ln ~/.gitattributes
+    ln ~/.gitignore
 }
 
 ghm() {
-    call "git push origin master";
+    call "git push origin master"
 }
 ghd() {
-    call "git push origin develop";
+    call "git push origin develop"
 }
 glm() {
-    call "git pull origin master";
+    call "git pull origin master"
 }
 gld() {
-    call "git pull origin develop";
+    call "git pull origin develop"
 }
 gst() {
-    call "git status -sb";
+    call "git status -sb"
 }
 
 ghcur() {
-    branch_name=$(git symbolic-ref --short -q HEAD);
-    git push origin $branch_name;
+    branch_name=$(git symbolic-ref --short -q HEAD)
+    git push origin $branch_name
 }
 
 glcur() {
-    branch_name=$(git symbolic-ref --short -q HEAD);
-    git pull origin $branch_name;
+    branch_name=$(git symbolic-ref --short -q HEAD)
+    git pull origin $branch_name
 }
 
 gcam() {
-    call "git commit -am \"$@\"";
+    call "git commit -am \"$@\""
 }
 
 # remove using regex
@@ -366,11 +366,11 @@ rmre() {
 }
 
 display_res() {
-    call "system_profiler SPDisplaysDataType";
+    call "system_profiler SPDisplaysDataType"
 }
 
 pyc() {
-    call "python -m compileall -l .";
+    call "python -m compileall -l ."
 }
 
 downall() {
@@ -380,38 +380,38 @@ downall() {
 
 tex_clean() {
     echo "Removing auto generated files in TeX IDE..."
-    rm **/*.Backup;
-    rm **/*.dvi;
-    rm **/*.ddf;
-    rm **/*.bb;
-    rm **/*.aux;
-    rm **/*.toc **/*.log **/*.out **/*.ind **/*.idx **/*.ilg;
+    rm **/*.Backup
+    rm **/*.dvi
+    rm **/*.ddf
+    rm **/*.bb
+    rm **/*.aux
+    rm **/*.toc **/*.log **/*.out **/*.ind **/*.idx **/*.ilg
 }
 
 grep_wd() {
     # globally search a regular expression and print
     # grep current working directory
-    call "grep -rnw . -e \"$1\"";
+    call "grep -rnw . -e \"$1\""
 }
 
 function githq() {
-    if [ $1 = 'amendtime' ];
-    then
+    if [ $1 = 'amendtime' ]; then
         # take an argument: "Wed Feb 16 14:00 2011 +0100"
-        git commit --amend --date="$2";
-    elif [ $1 = 'updatetime' ];
-    then
+        git commit --amend --date="$2"
+    elif [ $1 = 'updatetime' ]; then
         # change to current date
-        GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`";
+        GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
+    else
+        echo "Command $1 not found"
     fi
 }
 
 function permission_gain() {
     # take path to file as param
-    sudo chown -R $(whoami) "$1";
+    sudo chown -R $(whoami) "$1"
 }
 
 function pst_timezone() {
-    sudo rm -f /etc/localtime;
-    sudo ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime;
+    sudo rm -f /etc/localtime
+    sudo ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
 }
