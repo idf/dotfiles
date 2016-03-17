@@ -401,6 +401,8 @@ function githq() {
     elif [ $1 = 'updatetime' ]; then
         # change to current date
         GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
+    elif [ $1 = 'sampletime' ]; then
+        echo "Wed Feb 16 14:00 2011 +0100"
     else
         echo "Command $1 not found"
     fi
