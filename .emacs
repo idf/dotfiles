@@ -66,7 +66,8 @@
 (el-get-install 'smex)
 (el-get-install 'expand-region)
 (el-get-install 'helm)
-(el-get-install 'haskell-mode)
+; (el-get-install 'haskell-mode)
+(el-get-install 'csharp-mode)  ; sudo apt-get install git-svn
 (el-get-install 'neotree)
 (el-get-install 'js2-mode)
 (el-get-install 'switch-window)
