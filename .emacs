@@ -9,6 +9,9 @@
 (setq-default indent-tabs-mode nil)  ; disable tab
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
+; indentation
+(setq js-indent-level 2)
+
 ; line number
 (global-linum-mode t)  ; show line number
 (setq linum-format "%4d ")
