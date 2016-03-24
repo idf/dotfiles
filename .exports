@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Make vim the default editor
-export EDITOR="emacs";
+export EDITOR="emacsclient -t";
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768;
