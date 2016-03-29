@@ -44,7 +44,7 @@ else
     read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
     echo "";
     if  [[ $REPLY=='Y' || $REPLY=='y' ]]; then
-	read -p "Home directory (default: $HOME): " home;
+	read -p "Home directory (default: $HOME): " home
 	if  [[ $home = '' ]]; then
 	    doIt $HOME
 	else
