@@ -73,11 +73,11 @@
 (el-get-install 'expand-region)
 (el-get-install 'helm)
 ; (el-get-install 'haskell-mode)
-(el-get-install 'csharp-mode)  ; sudo apt-get install git-svn
+(el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
 (el-get-install 'neotree)
 (el-get-install 'js2-mode)
 (el-get-install 'switch-window)
-(el-get-install 'magit)
+(el-get-install 'magit)  ; sudo apt-get install -y texinfo
 (el-get-install 'git-gutter)
 (el-get-install 'smartparens)
 (el-get-install 'use-package)
