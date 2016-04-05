@@ -403,6 +403,10 @@ function githq() {
         GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
     elif [ $1 = 'sampletime' ]; then
         echo "Wed Feb 16 14:00 2011 +0100"
+    elif [ $1 = 'reset' ]; then
+        branch_name=$(git symbolic-ref --short -q HEAD)
+        git fetch --all && git reset --hard origin/$branch_name
+        echo "current branch $branch_name is reset"
     else
         echo "Command $1 not found"
     fi
