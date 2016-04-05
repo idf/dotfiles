@@ -42,10 +42,16 @@
 (global-set-key (kbd "C-c v") 'pbpaste)
 (global-set-key (kbd "C-c x") 'pbcut)
 
-;; el-get
-; el-get is smooth is osx
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+;; elpa
+(require 'package)
+(custom-set-variables
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa-stable" . "http://stable.melpa.org/packages/")))))
 
+;; el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
     (url-retrieve-synchronously
@@ -56,7 +62,7 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
-; auto installing pacakge, sometimes sudo required
+; auto installing pacakge, sudo required
 (el-get-install 'markdown-mode)
 (el-get-install 'web-mode)
 (el-get-install 'company-mode)  ; replace auto-complete
@@ -66,11 +72,12 @@
 (el-get-install 'smex)
 (el-get-install 'expand-region)
 (el-get-install 'helm)
-(el-get-install 'haskell-mode)
+; (el-get-install 'haskell-mode)
+(el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
 (el-get-install 'neotree)
 (el-get-install 'js2-mode)
 (el-get-install 'switch-window)
-(el-get-install 'magit)
+(el-get-install 'magit)  ; sudo apt-get install -y texinfo
 (el-get-install 'git-gutter)
 (el-get-install 'smartparens)
 (el-get-install 'use-package)
