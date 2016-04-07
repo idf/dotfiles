@@ -57,3 +57,9 @@ if [ -f /usr/local/bin/tmuxp.bash ]; then
 fi;
 
 eval "$(thefuck --alias funk)";
+
+
+# OSX
+if [ "$(uname)" == "Darwin" ]; then
+    source ~/.osx_functions
+fi
