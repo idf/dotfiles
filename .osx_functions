@@ -9,3 +9,20 @@ function finder() {
         echo "Command $1 not found"
     fi
 }
+
+function power() {
+    if [ $1 = 'lo' ]; then
+        # disable bluetooth
+        sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && \
+            sudo killall -HUP blued
+
+        pkill -a -i "Google Chrome"
+        open -a safari https://github.com
+    elif [ $1 = 'hi' ]; then
+        # enable bluetooth
+        sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 1 && \
+            sudo killall -HUP blued
+
+        open -a "Google Chrome" https://github.com
+    fi
+}
