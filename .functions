@@ -421,3 +421,7 @@ function pst_timezone() {
     sudo rm -f /etc/localtime
     sudo ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
 }
+
+function py_clean() {
+    call "rm **/*.pyc"
+}
