@@ -2,7 +2,7 @@
 # reference: https://mas-dse.github.io/DSE230/installation/linux/
 sudo -v
 
-function start_jupyter() {
+function jupyter_start() {
   # edit IP address: ~/.jupyter/jupyter_notebook_config.py: c.NotebookApp.ip = '0.0.0.0'
   # param: path
   if [[ $# -eq 0 ]] ; then
