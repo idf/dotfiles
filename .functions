@@ -76,7 +76,7 @@ function fs() {
 }
 
 # Use Git’s colored diff when available
-hash git &>/dev/null
+hash git &>/dev/null;
 if [ $? -eq 0 ]; then
     function diff() {
 	git diff --no-index --color-words "$@"
@@ -403,6 +403,10 @@ function githq() {
         GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
     elif [ $1 = 'sampletime' ]; then
         echo "Wed Feb 16 14:00 2011 +0100"
+    elif [ $1 = 'reset' ]; then
+        branch_name=$(git symbolic-ref --short -q HEAD)
+        git fetch --all && git reset --hard origin/$branch_name
+        echo "current branch $branch_name is reset"
     else
         echo "Command $1 not found"
     fi
@@ -416,4 +420,8 @@ function permission_gain() {
 function pst_timezone() {
     sudo rm -f /etc/localtime
     sudo ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
+}
+
+function py_clean() {
+    call "rm **/*.pyc"
 }

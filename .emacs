@@ -3,6 +3,7 @@
 (setq make-backup-files nil)  ; no backup
 (setq auto-save-default nil)  ; no auto-save
 (setq vc-follow-symlinks t)  ; auto follow symbolic links
+(setq confirm-kill-emacs 'y-or-n-p)
 
 ; file content
 (setq-default indent-tabs-mode nil)  ; disable tab
@@ -125,7 +126,8 @@
 
 ;; neotree
 (require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+(global-set-key (kbd "M-t") 'neotree-toggle)
+(call-interactively 'neotree-show)
 
 ;; shell-mode
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)

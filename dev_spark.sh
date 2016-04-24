@@ -3,7 +3,9 @@
 sudo -v
 
 function jupyter_start() {
-  # edit IP address: ~/.jupyter/jupyter_notebook_config.py: c.NotebookApp.ip = '0.0.0.0'
+  # edit IP address:
+  # $ jupyter notebook --generate-config
+  # $ ~/.jupyter/jupyter_notebook_config.py: c.NotebookApp.ip = '0.0.0.0'
   # param: path
   if [[ $# -eq 0 ]] ; then
     echo 'Error: Please specify the work directory.'
