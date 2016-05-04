@@ -2,8 +2,10 @@
 # reference: https://mas-dse.github.io/DSE230/installation/linux/
 sudo -v
 
-function start_jupyter() {
-  # edit IP address: ~/.jupyter/jupyter_notebook_config.py: c.NotebookApp.ip = '0.0.0.0'
+function jupyter_start() {
+  # edit IP address:
+  # $ jupyter notebook --generate-config
+  # $ ~/.jupyter/jupyter_notebook_config.py: c.NotebookApp.ip = '0.0.0.0'
   # param: path
   if [[ $# -eq 0 ]] ; then
     echo 'Error: Please specify the work directory.'

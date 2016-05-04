@@ -277,3 +277,5 @@ bower_components/
 
 *.db
 *.db-journal
+.ipynb_checkpoints/
+*.pickle
