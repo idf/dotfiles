@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+function finder() {
+    if [ $1 = 'wd' ]; then
+        cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+    else
+        echo "Command $1 not found"
+    fi
+}
