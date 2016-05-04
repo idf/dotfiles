@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# reference: https://github.com/herrbischoff/awesome-osx-command-line
+
 function finder() {
     if [ $1 = 'wd' ]; then
         cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
