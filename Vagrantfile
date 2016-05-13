@@ -25,6 +25,8 @@ Vagrant.configure(2) do |config|
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 8000, host: 4567
   config.vm.network :forwarded_port, guest: 80, host: 4568  # apache2
+  config.vm.network :forwarded_port, guest: 8888, host: 4571  # Jupyter Notebook
+  config.vm.network :forwarded_port, guest: 8889, host: 4572  # Jupyter Notebook 2
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
