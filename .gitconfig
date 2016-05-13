@@ -5,7 +5,7 @@
 # courtesy to https://github.com/imwithye/dotfiles/blob/master/git/gitconfig
 [filter "media"]
   clean = git-media-clean %f
-  smudge = git-media-smudge 
+  smudge = git-media-smudge
 [core]
   excludesfile = ~/.gitignore
   # http://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows
@@ -15,5 +15,6 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   rmdf = !git rm $(git ls-files --deleted)
   today = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --since=midnight
+  dff = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 [color]
   ui = true
