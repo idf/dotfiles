@@ -93,6 +93,7 @@
 ;; company-mode
 (setq company-idle-delay 0)  ; autocomplete delay
 (setq company-minimum-prefix-length 2)
+(setq company-dabbrev-downcase nil)  ; avoid lowercase in plain tex
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'python-mode-hook 'anaconda-mode
