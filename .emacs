@@ -1,3 +1,8 @@
+;; To reload this configuration
+; M-x load-file
+; ~/.emacs
+; or M-x eval-buffer
+
 ;; Editors
 ; file
 (setq make-backup-files nil)  ; no backup
@@ -129,7 +134,7 @@
 
 ;; neotree
 (require 'neotree)
-(global-set-key (kbd "M-t") 'neotree-toggle)
+; (global-set-key (kbd "M-t") 'neotree-toggle)
 (call-interactively 'neotree-show)
 
 ;; shell-mode
@@ -267,3 +272,13 @@
   (message (buffer-file-name)))
 
 (global-set-key (kbd "C-x l") 'show-file-name)
+
+
+;; Window move
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
