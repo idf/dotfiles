@@ -73,6 +73,7 @@
 (el-get-install 'smex)
 (el-get-install 'expand-region)
 (el-get-install 'helm)
+(el-get-install 'company-irony)
 ; (el-get-install 'haskell-mode)
 (el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
 (el-get-install 'neotree)
@@ -91,6 +92,8 @@
 (add-hook 'python-mode-hook 'anaconda-mode
   (lambda ()
     (setq-local company-backends '((company-anaconda)))))
+
+(eval-after-load 'company  '(add-to-list 'company-backends 'company-irony))
 
 (with-eval-after-load 'company  (define-key company-active-map (kbd "M-n") nil)
   (define-key company-active-map (kbd "M-p") nil)
