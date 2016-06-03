@@ -17,6 +17,7 @@
 
 ; indentation
 (setq js-indent-level 2)
+ (setq-default c-basic-offset 4)
 
 ; line number
 (global-linum-mode t)  ; show line number
@@ -79,7 +80,7 @@
 (el-get-install 'expand-region)
 (el-get-install 'helm)
 (el-get-install 'company-irony)
-; (el-get-install 'haskell-mode)
+(el-get-install 'haskell-mode)
 (el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
 (el-get-install 'neotree)
 (el-get-install 'js2-mode)
@@ -117,6 +118,7 @@
   (lambda () (interactive) (previous-line 7)))
 (global-set-key (kbd "C-m") 'newline-and-indent)  ; indentation
 
+; Multi-line cursor
 (global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not work in osx
 
 ;; smex
@@ -134,7 +136,7 @@
 
 ;; neotree
 (require 'neotree)
-; (global-set-key (kbd "M-t") 'neotree-toggle)
+(global-set-key (kbd "M-t") 'neotree-toggle)
 (call-interactively 'neotree-show)
 
 ;; shell-mode
