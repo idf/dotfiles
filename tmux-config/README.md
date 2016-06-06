@@ -1,4 +1,4 @@
-[Tmux](http://tmux.sourceforge.net/) is a terminal multiplexer. Tested with tmux 1.5 and 1.6.
+[Tmux](http://tmux.sourceforge.net/) is a terminal multiplexer. Tested with tmux 1.5, 1.6, 1.9, 2.2.
 
 This config has support for [tmux-mem-cpu](http://github.com/thewtex/tmux-mem-cpu-load).
 
