@@ -326,8 +326,8 @@ fi
 ## Git
 ginit() {
     git init
-    ln ~/.gitattributes
-    ln ~/.gitignore
+    cp ~/.gitattributes .
+    cp ~/.gitignore .
 }
 
 ghm() {
