@@ -24,8 +24,8 @@
 (setq linum-format "%4d ")
 
 ;; http://www.w3schools.com/colors/colors_picker.asp?colorhex=000000
-(set-face-background 'linum "#0d0d0d")
-(set-face-foreground 'linum "#262626")
+(set-face-background 'linum "#1a1a1a")
+(set-face-foreground 'linum "#404040")
 (setq frame-background-mode 'dark)
 ; fringe does not working in tty mode
 
