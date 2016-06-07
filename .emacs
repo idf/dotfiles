@@ -17,7 +17,7 @@
 
 ; indentation
 (setq js-indent-level 2)
- (setq-default c-basic-offset 4)
+(setq-default c-basic-offset 4)
 
 ; line number
 (global-linum-mode t)  ; show line number
@@ -57,7 +57,7 @@
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa-stable" . "http://stable.melpa.org/packages/")))))
+     ("melpa" . "http://stable.melpa.org/packages/")))))
 
 ;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -73,24 +73,25 @@
 
 ; auto installing pacakge, sudo required
 (el-get-install 'markdown-mode)
-(el-get-install 'web-mode)
-(el-get-install 'company-mode)  ; replace auto-complete
+(el-get-install 'web-mode)  ; major-mode for editing web templates
 (el-get-install 'anaconda-mode)
-(el-get-install 'company-anaconda)
-(el-get-install 'multiple-cursors)
-(el-get-install 'smex)
-(el-get-install 'expand-region)
-(el-get-install 'helm)
-(el-get-install 'company-irony)
+(el-get-install 'multiple-cursors)  ;  C-M-l
+(el-get-install 'smex)  ; inline M-x autocomplete
+(el-get-install 'expand-region)  ; expand markset selection
+(el-get-install 'helm)  ; complete in buffer
 (el-get-install 'haskell-mode)
-(el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
-(el-get-install 'neotree)
+; (el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
+(el-get-install 'neotree)  ; left folder tree
 (el-get-install 'js2-mode)
-(el-get-install 'switch-window)
+(el-get-install 'switch-window)  ; indexing window
 (el-get-install 'magit)  ; sudo apt-get install -y texinfo
-(el-get-install 'git-gutter)
-(el-get-install 'smartparens)
-(el-get-install 'use-package)
+(el-get-install 'git-gutter)  ; left side gutter
+(el-get-install 'smartparens)  ; pair
+(el-get-install 'use-package)  ; for .emacs to isolate package
+
+(el-get-install 'company-mode)  ; replace auto-complete
+(el-get-install 'company-anaconda)  ; python autocomplete
+(el-get-install 'company-irony)  ; cpp autocomplete
 
 ;; company-mode
 (setq company-idle-delay 0)  ; autocomplete delay
@@ -109,9 +110,13 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
+
+;; OS X
 (when (eq system-type 'darwin) ;; mac specific settings
 
 )
+;; flycheck
+; TODO
 
 ;; Keybindings
 ; move cursor multiple lines
