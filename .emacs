@@ -22,8 +22,10 @@
 ; line number
 (global-linum-mode t)  ; show line number
 (setq linum-format "%4d ")
-(set-face-background 'linum "black")
-(set-face-foreground 'linum "#3F3F3F")
+
+;; http://www.w3schools.com/colors/colors_picker.asp?colorhex=000000
+(set-face-background 'linum "#0d0d0d")
+(set-face-foreground 'linum "#262626")
 (setq frame-background-mode 'dark)
 ; fringe does not working in tty mode
 
