@@ -171,7 +171,7 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 # use "scroll reverser"
 
 # Enable Dark dock and menu bar;
-defaults write NSGlobalDomain AppleInterfaceStyle Dark;;
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
