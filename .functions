@@ -253,14 +253,18 @@ function tre() {
 }
 
 if [ ! -f "$HOME/env.sh" ]; then
-   touch $HOME/env.sh
+    echo "# env specific commands in this OS" > $HOME/env.sh
 fi
 source $HOME/env.sh
+
 if [ ! -f "$HOME/ssh_profile.sh" ]; then
     echo "# ssh -l USENAME sub.site.com -p PORT" > $HOME/ssh_profile.sh
 fi
 source $HOME/ssh_profile.sh
-source $HOME/.local/bin/bashmarks.sh  # bashmarks
+
+if [ -f "$HOME/.local/bin/bashmarks.sh" ]; then
+    source $HOME/.local/bin/bashmarks.sh  # bashmarks
+fi
 
 # SSH
 eval `ssh-agent -s`
@@ -330,20 +334,8 @@ ginit() {
     cp ~/.gitignore .
 }
 
-ghm() {
-    call "git push origin master"
-}
-ghd() {
-    call "git push origin develop"
-}
-glm() {
-    call "git pull origin master"
-}
-gld() {
-    call "git pull origin develop"
-}
-gst() {
-    call "git status -sb"
+vst() {
+    call "v status -sb"
 }
 
 ghcur() {
@@ -356,8 +348,8 @@ glcur() {
     git pull origin $branch_name
 }
 
-gcam() {
-    call "git commit -am \"$@\""
+vcam() {
+    call "v commit -am \"$@\""
 }
 
 # remove using regex

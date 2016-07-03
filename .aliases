@@ -14,6 +14,9 @@ alias sadd="ssh-add $HOME/.ssh/id_rsa"
 alias ec="emacsclient -t"
 alias eckill="emacsclient -e '(kill-emacs)'"
 
+# Versioning system
+alias v="git"  # OS default versioning system; override in ~/env.sh
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
