@@ -63,3 +63,7 @@ eval "$(thefuck --alias funk)";
 if [ "$(uname)" == "Darwin" ]; then
     source ~/.osx_functions
 fi
+
+if which hh >/dev/null; then
+    source ~/.hh
+fi
