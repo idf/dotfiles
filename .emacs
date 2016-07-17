@@ -80,9 +80,11 @@
 (el-get-install 'expand-region)  ; expand markset selection
 (el-get-install 'helm)  ; complete in buffer
 (el-get-install 'haskell-mode)
+(el-get-install 'ghc-mod)  ; cabal update && cabal install ghc-mod
+(el-get-install 'company-ghc)
 ; (el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
 (el-get-install 'neotree)  ; left folder tree
-(el-get-install 'js2-mode)
+(el-get-install 'js2-mode)  ; mooz/js2-mode
 (el-get-install 'switch-window)  ; indexing window
 (el-get-install 'magit)  ; sudo apt-get install -y texinfo
 (el-get-install 'git-gutter)  ; left side gutter
@@ -104,8 +106,10 @@
     (setq-local company-backends '((company-anaconda)))))
 
 (eval-after-load 'company  '(add-to-list 'company-backends 'company-irony))
+(eval-after-load 'company  '(add-to-list 'company-backends 'company-ghc))
 
-(with-eval-after-load 'company  (define-key company-active-map (kbd "M-n") nil)
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
   (define-key company-active-map (kbd "M-p") nil)
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
@@ -292,3 +296,8 @@
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
+
+;; ghc-mod
+(autoload 'ghc-init "ghc" nil t)
+(autoload 'ghc-debug "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
