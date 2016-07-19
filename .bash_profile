@@ -67,3 +67,6 @@ fi
 if which hh >/dev/null; then
     source $HOME/.hh
 fi
+
+# C-l: don't clear the screen unless otherwise explicitly type `clear`
+bind -x '"\C-l": ls'
