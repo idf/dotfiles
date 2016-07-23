@@ -62,17 +62,15 @@ eval "$(thefuck --alias funk)";
 # OSX
 if [ "$(uname)" == "Darwin" ]; then
     source $HOME/.osx_functions
-    if which update_terminal_cwd > /dev/null; then
-        update_terminal_cwd() {
-            # Identify the directory using a "file:" scheme URL,
-            # including the host name to disambiguate local vs.
-            # remote connections. Percent-escape spaces.
-            local SEARCH=' '
-            local REPLACE='%20'
-            local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
-            printf '\e]7;%s\a' "$PWD_URL"
-        }
-    fi
+    update_terminal_cwd() {
+        # Identify the directory using a "file:" scheme URL,
+        # including the host name to disambiguate local vs.
+        # remote connections. Percent-escape spaces.
+        local SEARCH=' '
+        local REPLACE='%20'
+        local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+        printf '\e]7;%s\a' "$PWD_URL"
+    }
 fi
 
 if which hh >/dev/null; then
