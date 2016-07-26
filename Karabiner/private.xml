@@ -24,6 +24,11 @@
     <appname>OSX</appname>
     <equal>com.apple.systempreferences</equal>
   </appdef>
+  <appdef>
+    <appname>ATOM</appname>
+    <equal>com.github.atom</equal>
+  </appdef>
+
 
 
   <replacementdef>
@@ -40,6 +45,7 @@
       VIRTUALMACHINE,
       X11,
       OSX,
+      ATOM,
     </replacementvalue>
   </replacementdef>
 

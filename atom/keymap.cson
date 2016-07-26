@@ -1,0 +1,2 @@
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-x d': 'editor:duplicate-lines'
