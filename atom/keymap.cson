@@ -1,2 +1,8 @@
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-x d': 'editor:duplicate-lines'
+
+'body':
+  'ctrl-x ctrl-1': 'pane:close-other-items'
+
+'.platform-darwin, .platform-win32, .platform-linux':
+  'alt-g g': 'go-to-line:toggle'
