@@ -417,3 +417,7 @@ function pst_timezone() {
 function py_clean() {
     call "rm **/*.pyc"
 }
+
+function repeat() {
+    seq $1 | xargs -Iz ${@:2}
+}

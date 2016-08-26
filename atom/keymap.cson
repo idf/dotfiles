@@ -1,5 +1,6 @@
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-x d': 'editor:duplicate-lines'
+  'ctrl-alt-r': 'refactor:rename'
 
 'body':
   'ctrl-x ctrl-1': 'pane:close-other-items'
