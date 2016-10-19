@@ -1,5 +1,6 @@
 #!/bin/bash
 
+apm install nuclide
 apm install fuzzy-finder
 apm install emacs-plus
 apm install clipboard-plus
