@@ -79,3 +79,7 @@ fi
 
 # C-l: don't clear the screen unless otherwise explicitly type `clear`
 bind -x '"\C-l": ls'
+
+if which autojump >/dev/null; then
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+fi
