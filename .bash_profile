@@ -56,8 +56,9 @@ if [ -f /usr/local/bin/tmuxp.bash ]; then
     source tmuxp.bash  # sudo pip install tmuxp
 fi;
 
-eval "$(thefuck --alias funk)";
-
+if which thefuck >/dev/null; then
+    eval "$(thefuck --alias funk)";
+fi;
 
 # OSX
 if [ "$(uname)" == "Darwin" ]; then
