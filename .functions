@@ -267,7 +267,7 @@ if [ -f "$HOME/.local/bin/bashmarks.sh" ]; then
 fi
 
 # SSH
-eval `ssh-agent -s`
+# eval `ssh-agent -s`
 
 #######################################
 # Functions
