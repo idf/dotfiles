@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# basic dev experience
 apm install nuclide
 apm install fuzzy-finder
 apm install emacs-plus
