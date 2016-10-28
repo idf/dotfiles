@@ -7,3 +7,5 @@ apm install emacs-plus
 apm install clipboard-plus
 apm install disable-keybindings
 apm install highlight-selected
+apm install copy-as-rtf
+apm install atom-beautify
