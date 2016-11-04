@@ -27,7 +27,7 @@ export PATH;
 # export GREP_OPTIONS="--color=auto";  # issues with git-bash
 
 # cheat
- export CHEATCOLORS=true
+# export CHEATCOLORS=true  # disable it for reading cheat in editor
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
