@@ -11,7 +11,7 @@ alias tmuxpl="tmuxp load ~/.tmuxp/0.json"
 
 # Shortcuts
 alias sadd="ssh-add $HOME/.ssh/id_rsa"
-alias ec="emacsclient -t"
+# alias ec="emacsclient -t"
 alias eckill="emacsclient -e '(kill-emacs)'"
 
 # Versioning system

@@ -421,3 +421,22 @@ function py_clean() {
 function repeat() {
     seq $1 | xargs -Iz ${@:2}
 }
+
+
+function _emacs() {
+    # Replace with `emacs` to not run as server/client mode
+    emacsclient -c $@
+}
+
+# An emacs 'alias' with the ability to read from stdin
+function ec() {
+    # http://compsoc.man.ac.uk/~shep/emacs-from-stdin.html
+    # If the argument is - then write stdin to a tempfile and open the tempfile.
+    if [[ $1 == - ]]; then
+        tempfile=$(mktemp ${TMPDIR}emacs-stdin-$USER.XXXXXXX)
+        cat - > $tempfile
+        _emacs $tempfile
+    else
+        _emacs "$@"
+    fi
+}
