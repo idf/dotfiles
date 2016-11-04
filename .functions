@@ -419,18 +419,19 @@ function py_clean() {
 }
 
 function repeat() {
+    # Usage: repeat 5 echo "hello"
     seq $1 | xargs -Iz ${@:2}
 }
 
 
 function _emacs() {
     # Replace with `emacs` to not run as server/client mode
-    emacsclient -c $@
+    emacsclient -ct $@
 }
 
 # An emacs 'alias' with the ability to read from stdin
 function ec() {
-    # usage: echo "hello" | ec -
+    # Usage: echo "hello" | ec -
     # reference: http://compsoc.man.ac.uk/~shep/emacs-from-stdin.html
     # If the argument is - then write stdin to a tempfile and open the tempfile.
     if [[ $1 == - ]]; then
