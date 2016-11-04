@@ -430,7 +430,8 @@ function _emacs() {
 
 # An emacs 'alias' with the ability to read from stdin
 function ec() {
-    # http://compsoc.man.ac.uk/~shep/emacs-from-stdin.html
+    # usage: echo "hello" | ec -
+    # reference: http://compsoc.man.ac.uk/~shep/emacs-from-stdin.html
     # If the argument is - then write stdin to a tempfile and open the tempfile.
     if [[ $1 == - ]]; then
         tempfile=$(mktemp ${TMPDIR}emacs-stdin-$USER.XXXXXXX)
