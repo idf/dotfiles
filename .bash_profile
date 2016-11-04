@@ -84,3 +84,16 @@ bind -x '"\C-l": ls'
 if which autojump >/dev/null; then
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
+
+if which cheat > /dev/null; then
+    # autocomplete for cheat
+    function _cheat_autocomplete {
+        sheets=$(cheat -l | cut -d' ' -f1)
+        COMPREPLY=()
+        if [ $COMP_CWORD = 1 ]; then
+	    COMPREPLY=(`compgen -W "$sheets" -- $2`)
+        fi
+    }
+
+    complete -F _cheat_autocomplete cheat
+fi
