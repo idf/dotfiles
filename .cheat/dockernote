@@ -1,0 +1,26 @@
+# Help
+docker --help
+docker <cmd> --help  # docker cp etc.
+
+# --interactive --tty --detach
+docker run -itd --name <name> <repo:image>
+
+# Interactive shell
+docker run -it --name <name> <repo:image> /bin/sh
+dokcer run -it --name <name> <repo:image> /bin/sh -c "echo 'hello'"
+
+## To detach an interactive shell
+c-p, c-q
+
+## To re-attach an interactive shell
+docker exec -it <name/id> bash
+
+# Execute an additional cmd for container
+docker exec <name> <cmd>
+
+# Restart
+docker restart <name>
+
+# Log
+docker logs <name>
+docker logs -f <name>  # --follow the logs

@@ -10,6 +10,10 @@
 (setq vc-follow-symlinks t)  ; auto follow symbolic links
 (setq confirm-kill-emacs 'y-or-n-p)
 
+;; visible-bell
+(setq visible-bell nil) ;; The default
+(setq ring-bell-function 'ignore)
+
 ; file content
 (setq-default indent-tabs-mode nil)  ; disable tab
 (setq-default indent-tabs-mode nil)  ; disable tab

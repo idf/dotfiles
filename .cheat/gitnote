@@ -1,0 +1,8 @@
+# checkout remote branch
+git checkout --track origin/<bname>
+
+# reset
+git fetch --all && git reset --hard origin/master
+
+# diff staged file
+git diff -staged .
