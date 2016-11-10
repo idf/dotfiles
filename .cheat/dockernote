@@ -1,6 +1,9 @@
 # Help
 docker --help
-docker <cmd> --help  # docker cp etc.
+docker $cmd --help  # docker cp etc.
+
+# Build
+docker build -t <new_image> <path/to/Dockerfile>
 
 # --interactive --tty --detach
 docker run -itd --name <name> <repo:image>
@@ -8,12 +11,12 @@ docker run -itd --name <name> <repo:image>
 # Interactive shell
 docker run -it --name <name> <repo:image> /bin/sh
 dokcer run -it --name <name> <repo:image> /bin/sh -c "echo 'hello'"
-
 ## To detach an interactive shell
 c-p, c-q
-
 ## To re-attach an interactive shell
 docker exec -it <name/id> bash
+## Transient client container: rm after exit
+docker run –it --rm --link <name>:$name <image> <shell> $name  # e.g Cassandra cqlsh shell
 
 # Execute an additional cmd for container
 docker exec <name> <cmd>
@@ -24,3 +27,23 @@ docker restart <name>
 # Log
 docker logs <name>
 docker logs -f <name>  # --follow the logs
+
+docker inspect <name>
+docker inspect --format "{{.State.Running}}" <name>
+docker inspect -f "{{json .Volumes}}" <name>
+
+# Create
+-- replace run using create, create a container at a stopped state
+docker create nginx
+docker create --cidfile /tmp/web.cid nginx
+
+# Commit a container; save changes to image
+docker commit -m "msg" <hash> <username>/<repo>
+
+# Clean
+docker rm <name>
+docker rm -v $(docker ps -aq) # -v remove volumne also
+
+# Images
+docker images -a  # list all
+docker rmi <image>

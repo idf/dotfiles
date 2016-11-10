@@ -1,8 +1,16 @@
-# checkout remote branch
+# Checkout remote branch
 git checkout --track origin/<bname>
 
-# reset
+# Reset
 git fetch --all && git reset --hard origin/master
 
-# diff staged file
+# Revert commit
+git reset --hard HEAD~1  # undo commit
+git reset --soft HEAD~1  # undo but keep changes and index (staging)
+
+# Revert file
+git checkout path/file
+git checkout hash path/file
+
+# Diff staged file
 git diff -staged .

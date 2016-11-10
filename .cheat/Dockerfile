@@ -1,3 +1,4 @@
+// Dockerfile encapsulate the shared common dependencies for containers
 # Image
 FROM ubuntu:14.04
 ## Or
@@ -14,7 +15,7 @@ RUN apt-get update && \
 RUN mkdir -p /root/app
 WORKDIR /root/app
 
-# Install app dependences
+# Install app dependencies
 COPY file /path/to/folder
 COPY folder /path/to/folder
 

@@ -1,0 +1,34 @@
+# Volume
+docker run -itd --net=$network --volume </path/>    --name=$VOL   <image>
+docker run -itd --net=$network --volumes-from $VOL  --name <name> <image>
+## copy host file to data container's volume path
+COPY <hostpath> <containerpath>
+## Bind Mount - host FS
+-v $hostpath:$containerpath
+-v $hostpath:$containerpath:ro  # :ro readonly
+## Managed Mount
+-v $containerpath
+## Sharing volume
+--volumes-from <name>  # transitively copy volumes
+## Patterns
+### Volume container pattern
+--volume-from <vc_name>
+### Data-packed volume containers
+docker run --name <name> -v /config <image> \
+  /bin/sh -c 'cp /packed/* /config/'  # data from the image
+### Polymorphic container patterns
+--volume-from <devenv>  # put dev codes on vol, enable dev container
+--volume-from <prodenv>
+
+# Environment Variables
+-- Deployment-specific env var should in script rather than Dockerfile
+docker run --env $ENV=$VAL ...
+
+# Network Bridge
+docker network rm $network
+docker network create -d bridge $network
+docker run -itd --net=$network --name <name> <image>
+docker run -itd --net=$network --name <name> <image>
+
+# Expose
+docker run -p 80:80 ...
