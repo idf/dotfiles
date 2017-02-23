@@ -447,3 +447,8 @@ function ec() {
         _emacs "$@"
     fi
 }
+
+function ssh_agent() {
+    eval "$(ssh-agent -s)"
+    ssh-add -K ~/.ssh/id_rsa
+}
