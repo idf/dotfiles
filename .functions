@@ -348,6 +348,10 @@ glcur() {
     git pull origin $branch_name
 }
 
+gcam() {
+    call "git commit -am \"$@\""
+}
+
 vcam() {
     call "v commit -am \"$@\""
 }
@@ -384,6 +388,7 @@ grep_wd() {
     # globally search a regular expression and print
     # grep current working directory
     call "grep -rnw . -e \"$1\""
+    # p.s. possibly replaced by ruby package spot
 }
 
 function githq() {
