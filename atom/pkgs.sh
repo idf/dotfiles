@@ -9,3 +9,4 @@ apm install disable-keybindings
 apm install highlight-selected
 apm install copy-as-rtf
 apm install atom-beautify
+apm install linter-eslint
