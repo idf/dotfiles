@@ -1,5 +1,13 @@
+# URL
+git remote add     origin <url>
+git remote set-url origin <url>
+git remote -v
+
 # Checkout remote branch
 git checkout --track origin/<bname>
+
+# Amend commit message
+git commit --amend -m "<msg>"
 
 # Reset
 git fetch --all && git reset --hard origin/master
