@@ -149,12 +149,6 @@
 (require 'helm-config)
 (global-set-key (kbd "M-h") 'helm-M-x)  ; upper case
 
-;; neotree
-(require 'neotree)
-(global-set-key (kbd "M-t") 'neotree-toggle)
-(setq-default neo-show-hidden-files t)
-; (call-interactively 'neotree-show)
-
 ;; shell-mode
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -255,3 +249,18 @@
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+
+;; neotree
+(require 'neotree)
+(global-set-key (kbd "M-t") 'neotree-toggle)
+(setq-default neo-show-hidden-files t)
+
+(defun neotree-startup ()
+  (interactive)
+  (neotree-show)
+  (call-interactively 'other-window))
+
+(if (daemonp)
+    (add-hook 'server-switch-hook #'neotree-startup)
+  (add-hook 'after-init-hook #'neotree-startup)
+)
