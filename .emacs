@@ -150,10 +150,10 @@
 (global-set-key (kbd "M-h") 'helm-M-x)  ; upper case
 
 ;; neotree
-; (require 'neotree)
-; (global-set-key (kbd "M-t") 'neotree-toggle)
+(require 'neotree)
+(global-set-key (kbd "M-t") 'neotree-toggle)
+(setq-default neo-show-hidden-files t)
 ; (call-interactively 'neotree-show)
-; (setq-default neo-show-hidden-files t)  ; display hidden files, not working yet
 
 ;; shell-mode
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
