@@ -8,14 +8,14 @@
 (setq make-backup-files nil)  ; no backup
 (setq auto-save-default nil)  ; no auto-save
 (setq vc-follow-symlinks t)  ; auto follow symbolic links
-(setq confirm-kill-emacs 'y-or-n-p)
+(setq confirm-kill-emacs 'y-or-n-p)  ; close confirmation
+(setq initial-scratch-message "scratch")
 
 ;; visible-bell
 (setq visible-bell nil) ;; The default
 (setq ring-bell-function 'ignore)
 
 ; file content
-(setq-default indent-tabs-mode nil)  ; disable tab
 (setq-default indent-tabs-mode nil)  ; disable tab
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
@@ -26,7 +26,6 @@
 ; line number
 (global-linum-mode t)  ; show line number
 (setq linum-format "%4d ")
-
 ;; http://www.w3schools.com/colors/colors_picker.asp?colorhex=000000
 (set-face-background 'linum "#1a1a1a")
 (set-face-foreground 'linum "#000000")
@@ -137,7 +136,7 @@
 ; Multi-line cursor
 (global-set-key (kbd "C-M-l") 'mc/edit-lines)  ; C-S combo does not work in osx
 
-;; smex
+;; smex, M-x enhancement
 (global-set-key (kbd "M-x") 'smex)  ; $ chmod 777 ~/.emacs.d/smex-items
 (global-set-key (kbd "M-X") 'smex-major-mode-commands) ; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
@@ -151,9 +150,10 @@
 (global-set-key (kbd "M-h") 'helm-M-x)  ; upper case
 
 ;; neotree
-(require 'neotree)
-(global-set-key (kbd "M-t") 'neotree-toggle)
-(call-interactively 'neotree-show)
+; (require 'neotree)
+; (global-set-key (kbd "M-t") 'neotree-toggle)
+; (call-interactively 'neotree-show)
+; (setq-default neo-show-hidden-files t)  ; display hidden files, not working yet
 
 ;; shell-mode
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -199,7 +199,7 @@
 (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
-;;smartparens
+;; smartparens
 (require 'smartparens-config)
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
