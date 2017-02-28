@@ -1,0 +1,15 @@
+# basic
+hg commit -m "message"
+hg amend
+arc diff --prepare
+
+# see view
+hg sl  # smart log
+
+# rebase
+hg update <version>  # checkout
+hg rebase -d master
+
+# evolution
+hg amend
+hg evolve
