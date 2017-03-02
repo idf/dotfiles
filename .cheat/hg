@@ -13,3 +13,11 @@ hg rebase -d master
 # evolution
 hg amend
 hg evolve
+
+# update
+arc pull
+arc clean
+
+# local changes
+hg shelve [path/file_name]
+hg unshelve [bookmark]
