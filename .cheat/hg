@@ -21,3 +21,4 @@ arc clean
 # local changes
 hg shelve [path/file_name]
 hg unshelve [bookmark]
+hg revert [path]  # disregard
