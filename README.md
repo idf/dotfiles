@@ -77,5 +77,11 @@ tmuxp load <filename>
 ## Multi-level Tmux
 [To send prefix](http://stackoverflow.com/questions/8518815/how-to-send-commands-when-opening-a-tmux-session-inside-another-tmux-session)
 
+# Keyboad shortcut
+
+1. `c-r`: hh. Bash history.
+1. `c-f`: qfc. Quick Command-line File Completion.
+1. `c-l`: ls.
+
 # Troubleshooting
 If encounter "Failed to connect server", you need to start tmux.
