@@ -77,12 +77,13 @@
 ; auto installing pacakge, sudo required
 (el-get-install 'markdown-mode)
 (el-get-install 'web-mode)  ; major-mode for editing web templates
-(el-get-install 'anaconda-mode)
+(el-get-install 'anaconda-mode)  ; require virtualenv
 (el-get-install 'multiple-cursors)  ;  C-M-l
 (el-get-install 'smex)  ; inline M-x autocomplete
 (el-get-install 'expand-region)  ; expand markset selection
 (el-get-install 'helm)  ; complete in buffer
 (el-get-install 'haskell-mode)
+(el-get-install 'powerline)
 (el-get-install 'ghc-mod)  ; cabal update && cabal install ghc-mod
 (el-get-install 'company-ghc)
 ; (el-get-install 'csharp-mode)  ; sudo apt-get install -y git-svn
@@ -235,6 +236,10 @@
 
 (global-set-key (kbd "C-x l") 'show-file-name)
 
+;; powerline
+(require 'powerline)
+(powerline-default-theme)
+
 
 ;; Window move
 (when (fboundp 'windmove-default-keybindings)
@@ -262,5 +267,4 @@
 
 (if (daemonp)
     (add-hook 'server-switch-hook #'neotree-startup)
-  (add-hook 'after-init-hook #'neotree-startup)
-)
+  (add-hook 'after-init-hook #'neotree-startup))

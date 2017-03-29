@@ -61,11 +61,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-192 1425 796 473 -461 1050 2560 1418 </string>
+	<string>184 318 918 452 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>125 142 1429 749 0 0 1680 1028 </string>
+	<string>0 4 1680 1024 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>212 101 745 502 0 0 1680 1028 </string>
+	<string>843 576 665 452 0 0 1680 1028 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -264,9 +264,11 @@
 				<real>1</real>
 			</dict>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
-			<false/>
+			<true/>
+			<key>Blur Radius</key>
+			<real>21.56216687817259</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -284,6 +286,8 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -708,7 +712,7 @@
 			<key>Thin Strokes</key>
 			<integer>0</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.11467718908629443</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -789,7 +793,7 @@
 	<key>TabStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
-	<string>/-+\~_.</string>
+	<string> </string>
 	<key>iTerm Version</key>
 	<string>3.1.beta.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
