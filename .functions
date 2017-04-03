@@ -452,3 +452,18 @@ function ssh_agent() {
     eval "$(ssh-agent -s)"
     ssh-add -K ~/.ssh/id_rsa
 }
+
+function tmux_mouse_toggle() {
+    # tmux 2.3
+    if [[ -n $TMUX ]]; then
+        if [[ -z "$(tmux show-options -g mouse | grep off)" ]]; then
+            tmux set -g mouse off
+            tmux display-message "Mouse: OFF"
+        else
+            tmux set -g mouse on
+            tmux display-message "Mouse: ON"
+        fi
+    else
+        echo "not tmux session"
+    fi
+}
