@@ -1,5 +1,5 @@
 # basic
-hg commit -m "message"
+hg commit -m "<msg>"
 hg amend
 arc diff --prepare
 
@@ -19,6 +19,9 @@ arc pull
 arc clean
 
 # local changes
-hg shelve [path/file_name]
-hg unshelve [bookmark]
-hg revert [path]  # disregard
+hg shelve <path> <mark>
+hg unshelve <mark>
+hg revert <path>  # disregard
+
+# revert a file to previous commit
+hg revert <file> -r .~1

@@ -6,8 +6,9 @@ git remote -v
 # Checkout remote branch
 git checkout --track origin/<bname>
 
-# Amend commit message
-git commit --amend -m "<msg>"
+# Amend
+git commit --amend -m "<msg>"  # amend message, OR git commit --amend
+git commit -a --amend          # amend commit
 
 # Reset
 git fetch --all && git reset --hard origin/master
@@ -17,8 +18,11 @@ git reset --hard HEAD~1  # undo commit
 git reset --soft HEAD~1  # undo but keep changes and index (staging)
 
 # Revert file
-git checkout path/file
-git checkout hash path/file
+git checkout <file>
+git checkout <hash> <file>
+git checkout HEAD^ <file>
 
-# Diff staged file
-git diff -staged .
+# Diff
+git diff -staged .       # diff staged changes
+git diff <hash>^ <hash>  # diff commit ids
+git diff HEAD^           # diff commit to previous commit
