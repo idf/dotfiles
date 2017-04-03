@@ -29,7 +29,7 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+if hash brew 2> /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
     source "$(brew --prefix)/etc/bash_completion";
 elif [ -f /etc/bash_completion ]; then
     source /etc/bash_completion;
@@ -56,7 +56,7 @@ if [ -f /usr/local/bin/tmuxp.bash ]; then
     source tmuxp.bash  # sudo pip install tmuxp
 fi;
 
-if which thefuck >/dev/null; then
+if hash thefuck 2>/dev/null; then
     eval "$(thefuck --alias funk)";
 fi;
 
@@ -74,18 +74,18 @@ if [ "$(uname)" == "Darwin" ]; then
     }
 fi
 
-if which hh >/dev/null; then
+if hash hh 2>/dev/null; then
     source $HOME/.hh
 fi
 
 # C-l: don't clear the screen unless otherwise explicitly type `clear`
 bind -x '"\C-l": ls'
 
-if which autojump >/dev/null; then
+if hash autojump 2>/dev/null; then
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
-if which cheat > /dev/null; then
+if hash cheat 2> /dev/null; then
     # autocomplete for cheat
     function _cheat_autocomplete {
         sheets=$(cheat -l | cut -d' ' -f1)
@@ -98,7 +98,7 @@ if which cheat > /dev/null; then
     complete -F _cheat_autocomplete cheat
 fi
 
-if which brew >/dev/null; then
+if hash brew 2>/dev/null; then
     if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
         . $(brew --prefix)/share/bash-completion/bash_completion
     fi
