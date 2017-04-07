@@ -467,3 +467,7 @@ function tmux_mouse_toggle() {
         echo "not tmux session"
     fi
 }
+
+function epoch() {
+    date +%s
+}
