@@ -474,4 +474,5 @@ function gbincr() {
     new_no=$((base_no+1))
     new_branch=${base_branch:0:1}${new_no}
     git checkout -b $new_branch $base_branch
+    git branch --set-upstream-to=$base_branch $new_branch
 }
