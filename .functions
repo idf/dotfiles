@@ -470,4 +470,5 @@ function tmux_mouse_toggle() {
 
 function epoch() {
     date +%s
+    # python3 -c "import time; print(time.time())"
 }
