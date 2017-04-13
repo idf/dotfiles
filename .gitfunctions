@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+call() {
+    echo "calling: $1"
+    eval $1
+}
+
+## Git
+gst() {
+    call "git status -sb"
+}
+
+ginit() {
+    git init
+    cp ~/.gitattributes .
+    cp ~/.gitignore .
+}
+
+ghcur() {
+    branch_name=$(git symbolic-ref --short -q HEAD)
+    git push origin $branch_name
+}
+
+glcur() {
+    branch_name=$(git symbolic-ref --short -q HEAD)
+    git pull origin $branch_name
+}
+
+gcam() {
+    call "git commit -am \"$@\""
+}
+
+vcam() {
+    call "v commit -am \"$@\""
+}
+
+gbincr() {
+    base_branch=$(git symbolic-ref --short -q HEAD)
+    base_no=${base_branch:1}
+    new_no=$((base_no+1))
+    new_branch=${base_branch:0:1}${new_no}
+    git checkout -b $new_branch $base_branch
+    git branch --set-upstream-to=$base_branch $new_branch
+}
+
+githq() {
+    if [ $1 = 'amendtime' ]; then
+        # take an argument: "Wed Feb 16 14:00 2011 +0100"
+        git commit --amend --date="$2"
+    elif [ $1 = 'updatetime' ]; then
+        # change to current date
+        GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
+    elif [ $1 = 'sampletime' ]; then
+        echo "Wed Feb 16 14:00 2011 +0100"
+    elif [ $1 = 'reset' ]; then
+        branch_name=$(git symbolic-ref --short -q HEAD)
+        git fetch --all && git reset --hard origin/$branch_name
+        echo "current branch $branch_name is reset"
+    else
+        echo "Command $1 not found"
+    fi
+}

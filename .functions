@@ -326,36 +326,6 @@ if [[ `uname` == 'Darwin' ]]; then
     }
 fi
 
-
-## Git
-ginit() {
-    git init
-    cp ~/.gitattributes .
-    cp ~/.gitignore .
-}
-
-vst() {
-    call "v status -sb"
-}
-
-ghcur() {
-    branch_name=$(git symbolic-ref --short -q HEAD)
-    git push origin $branch_name
-}
-
-glcur() {
-    branch_name=$(git symbolic-ref --short -q HEAD)
-    git pull origin $branch_name
-}
-
-gcam() {
-    call "git commit -am \"$@\""
-}
-
-vcam() {
-    call "v commit -am \"$@\""
-}
-
 # remove using regex
 rmre() {
     find . -name "$1" -exec rm -rf "{}" \;
@@ -389,24 +359,6 @@ grep_wd() {
     # grep current working directory
     call "grep -rnw . -e \"$1\""
     # p.s. possibly replaced by ruby package spot
-}
-
-function githq() {
-    if [ $1 = 'amendtime' ]; then
-        # take an argument: "Wed Feb 16 14:00 2011 +0100"
-        git commit --amend --date="$2"
-    elif [ $1 = 'updatetime' ]; then
-        # change to current date
-        GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"
-    elif [ $1 = 'sampletime' ]; then
-        echo "Wed Feb 16 14:00 2011 +0100"
-    elif [ $1 = 'reset' ]; then
-        branch_name=$(git symbolic-ref --short -q HEAD)
-        git fetch --all && git reset --hard origin/$branch_name
-        echo "current branch $branch_name is reset"
-    else
-        echo "Command $1 not found"
-    fi
 }
 
 function permission_gain() {
@@ -473,11 +425,6 @@ function epoch() {
     # python3 -c "import time; print(time.time())"
 }
 
-function gbincr() {
-    base_branch=$(git symbolic-ref --short -q HEAD)
-    base_no=${base_branch:1}
-    new_no=$((base_no+1))
-    new_branch=${base_branch:0:1}${new_no}
-    git checkout -b $new_branch $base_branch
-    git branch --set-upstream-to=$base_branch $new_branch
-}
+
+# git specific functions
+source $HOME/.gitfunctions
