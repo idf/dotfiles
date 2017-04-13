@@ -17,6 +17,7 @@
 
 ; file content
 (setq-default indent-tabs-mode nil)  ; disable tab
+(set-default 'truncate-lines t)  ; disable soft wrap
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
 ; indentation
