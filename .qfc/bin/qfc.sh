@@ -1,5 +1,5 @@
 # default key bindings
-complete_shortcut="${qfc_complete_SHORTCUT:-\C-f}"
+complete_shortcut="${qfc_complete_SHORTCUT:-\C-h}"
 
 function get_cursor_position(){
   # based on a script from http://invisible-island.net/xterm/xterm.faq.html

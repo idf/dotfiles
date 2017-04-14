@@ -1,17 +1,18 @@
-CTRL_C = 3         # Ctrl-c
-CTRL_H = 8         # ctrl-h
-CTRL_J = 10        # ctrl-h
-CTRL_K = 11        # ctrl-h
-CTRL_L = 12        # ctrl-h
-CTRL_F = 6        # ctrl-f
+# A is 1
+CTRL_C = 7         # Ctrl-c  # cancel rebind to G
+CTRL_H = 2         # ctrl-h, left, rebind to B
+CTRL_J = 14        # ctrl-h down, rebind to N
+CTRL_K = 16        # ctrl-h up, rebind to P
+CTRL_L = 6         # ctrl-h, rebind to F
+CTRL_F = 8         # ctrl-f  # default rebind to H
 ENTER = 13         # Enter
-CTRL_U = 21        # Ctrl+u
+CTRL_U = 11        # Ctrl+u, clean, rebind to k
 ESC = 27           # Escape
 BACKSPACE =  127   # Backspace
 TAB = 9            # Tab
-RIGHT = -1     	   # FAKE CODE to abstract away the fact that a multibyte string is needed to represent arrow keys 
+RIGHT = -1         # FAKE CODE to abstract away the fact that a multibyte string is needed to represent arrow keys
 DOWN = -2          # same
-UP = -3		   # same
+UP = -3            # same
 LEFT = -4          # same
 SHIFTTAB = -5      # same
 SHIFTENTER = -6

@@ -80,7 +80,7 @@ tmuxp load <filename>
 # Keyboad shortcut
 
 1. `c-r`: hh. Bash history.
-1. `c-f`: qfc. Quick Command-line File Completion.
+1. `c-h`: qfc. Quick Command-line File Completion.
 1. `c-l`: ls.
 
 # Troubleshooting
