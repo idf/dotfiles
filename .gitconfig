@@ -11,6 +11,7 @@
   # http://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows
   autocrlf = false
   eol = lf
+  pager = less -+$LESS -RSX
 [alias]
   # smart log
   sl = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
