@@ -1,0 +1,1 @@
+echo 'stmt1; /* comment */ stmt2; /* comment */' | sed 's,/\*.*\*/,,'  # , in lieu of /; greedily remove stmt2

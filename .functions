@@ -372,6 +372,7 @@ hist_probe() {
 
 grep_re() {
     # need to quote grep -E '[0-9]' to avoid bash expansion
+    # prefer single quote over double quotes to also prevent bash expansion
     grep -E $@
 }
 
