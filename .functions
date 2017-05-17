@@ -361,27 +361,36 @@ grep_wd() {
     # p.s. possibly replaced by ruby package spot
 }
 
-function permission_gain() {
+permission_gain() {
     # take path to file as param
     sudo chown -R $(whoami) "$1"
 }
 
-function pst_timezone() {
+hist_probe() {
+    set | grep "HIST"
+}
+
+grep_re() {
+    # need to quote grep -E '[0-9]' to avoid bash expansion
+    grep -E $@
+}
+
+pst_timezone() {
     sudo rm -f /etc/localtime
     sudo ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
 }
 
-function py_clean() {
+py_clean() {
     call "rm **/*.pyc"
 }
 
-function repeat() {
+repeat() {
     # Usage: repeat 5 echo "hello"
     seq $1 | xargs -Iz ${@:2}
 }
 
 
-function _emacs() {
+_emacs() {
     # Replace with `emacs` to not run as server/client mode
     emacsclient -ct $@
 }
@@ -400,12 +409,12 @@ function ec() {
     fi
 }
 
-function ssh_agent() {
+ssh_agent() {
     eval "$(ssh-agent -s)"
     ssh-add -K ~/.ssh/id_rsa
 }
 
-function tmux_mouse_toggle() {
+tmux_mouse_toggle() {
     # tmux 2.3
     if [[ -n $TMUX ]]; then
         if [[ -z "$(tmux show-options -g mouse | grep off)" ]]; then
@@ -420,7 +429,7 @@ function tmux_mouse_toggle() {
     fi
 }
 
-function epoch() {
+epoch() {
     date +%s
     # python3 -c "import time; print(time.time())"
 }
