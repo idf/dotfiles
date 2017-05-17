@@ -11,6 +11,11 @@
 (setq confirm-kill-emacs 'y-or-n-p)  ; close confirmation
 (setq initial-scratch-message "scratch")
 
+; hightlight current line
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#1a1a1a")
+(set-face-foreground 'highlight nil)
+
 ;; visible-bell
 (setq visible-bell nil) ;; The default
 (setq ring-bell-function 'ignore)

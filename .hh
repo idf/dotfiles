@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # hstr: history suggest box
+# Replacing the default reverse search C-r
+
 # brew install hh
 # https://github.com/dvorka/hstr
 

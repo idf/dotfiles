@@ -1,5 +1,6 @@
 {
 	"font_size": 19,
 	"tab_size": 4,
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+    "open_files_in_new_window": false,
 }
