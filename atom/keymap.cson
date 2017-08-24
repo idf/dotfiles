@@ -2,6 +2,9 @@
   'ctrl-x d': 'editor:duplicate-lines'
   'ctrl-alt-r': 'refactor:rename'
 
+'.platform-darwin atom-workspace':
+  'ctrl-alt-s': 'nuclide-related-files:jump-to-next-related-file'
+
 'body':
   'ctrl-x ctrl-1': 'pane:close-other-items'
 
