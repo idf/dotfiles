@@ -60,12 +60,19 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSUserKeyEquivalents</key>
+	<dict>
+		<key>Bury Session</key>
+		<string>@~^$b</string>
+	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>367 647 918 381 0 0 1680 1028 </string>
+	<string>249 599 770 429 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1680 1024 0 0 1680 1028 </string>
+	<string>40 514 0 22 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 4 1680 1024 0 0 1680 1028 </string>
+	<string>212 101 665 452 0 0 1680 1028 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>251 112 665 452 0 0 1680 1028 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -804,10 +811,14 @@
 	<true/>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>TabStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string> </string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.1.beta.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>

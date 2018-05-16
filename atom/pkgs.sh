@@ -12,3 +12,4 @@ apm install atom-beautify
 apm install linter-eslint
 apm install highlight-line
 apm install ariake-dark-syntax  # syntax highlight with Fira
+apm install indent-guide-improved
