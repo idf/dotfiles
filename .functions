@@ -435,6 +435,10 @@ epoch() {
     # python3 -c "import time; print(time.time())"
 }
 
+vanilla_shell() {
+    env -i bash --norc --noprofile
+}
+
 
 # git specific functions
 source $HOME/.gitfunctions
