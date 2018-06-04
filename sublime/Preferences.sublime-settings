@@ -1,6 +1,7 @@
 {
-	"font_size": 14,
-	"open_files_in_new_window": false,
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true
+    "font_size": 14,
+    "open_files_in_new_window": false,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "font_face": "Fira Code",
 }
