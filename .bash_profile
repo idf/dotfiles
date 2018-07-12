@@ -56,10 +56,6 @@ if [ -f /usr/local/bin/tmuxp.bash ]; then
     source tmuxp.bash  # sudo pip install tmuxp
 fi;
 
-if hash thefuck 2>/dev/null; then
-    eval "$(thefuck --alias funk)";
-fi;
-
 # OSX
 if [ "$(uname)" == "Darwin" ]; then
     source $HOME/.osx_functions
