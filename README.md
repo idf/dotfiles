@@ -14,6 +14,10 @@ Install OS X defaults (need to log out and log in again)
 sudo bash ~/.osx
 ```
 
+# MacOS
+* Open finder's current directory in terminal: `finder wd`
+* Open terminal's current directory in finder: `open .`
+
 # Git Subtree
 * [tmux-config](https://github.com/idf/tmux-config) (public branch)
 
