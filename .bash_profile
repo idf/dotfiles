@@ -56,10 +56,6 @@ if [ -f /usr/local/bin/tmuxp.bash ]; then
     source tmuxp.bash  # sudo pip install tmuxp
 fi;
 
-if hash thefuck 2>/dev/null; then
-    eval "$(thefuck --alias funk)";
-fi;
-
 # OSX
 if [ "$(uname)" == "Darwin" ]; then
     source $HOME/.osx_functions
@@ -77,6 +73,18 @@ fi
 if hash hh 2>/dev/null; then
     source $HOME/.hh
 fi
+
+# Fix Bash-Completion Errors by using updated shell
+if ! grep '/usr/local/bin/bash' /etc/shells; then
+  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/bash;
+fi;
+
+# Fix complete: -D: invalid option
+if ! grep '/usr/local/bin/bash' /etc/shells; then
+  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/bash;
+fi;
 
 # C-l: don't clear the screen unless otherwise explicitly type `clear`
 bind -x '"\C-l": ls'
@@ -105,9 +113,3 @@ if hash brew 2>/dev/null; then
 fi
 
 [[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
-
-# BEGIN: Block added by chef, to set environment strings
-# Please see https://fburl.com/AndroidProvisioning if you do not use bash
-# or if you would rather this bit of code 'live' somewhere else
-. ~/.fbchef/environment
-# END: Block added by chef
