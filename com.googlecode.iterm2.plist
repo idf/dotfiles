@@ -72,9 +72,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>3997 -55 606 469 3728 -181 1280 2026 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>3246 488 796 473 1680 0 3440 1418 </string>
+	<string>2630 589 770 429 1680 0 3440 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1028 0 0 1680 1028 </string>
+	<string>843 0 834 1028 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 665 452 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -693,11 +693,11 @@
 			<key>Normal Font</key>
 			<string>FiraCode-Medium 14</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
