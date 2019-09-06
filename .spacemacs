@@ -38,12 +38,14 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ivy
+     (company :variables
+              company-idle-delay 0.01)
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.1
-                      spacemacs-default-company-backends '(company-files company-capf)
+                      auto-completion-complete-with-key-sequence-delay nil
+                      ;; spacemacs-default-company-backends '(company-files company-capf company-dabbrev company-dabbrev-code)
                       auto-completion-private-snippets-directory nil)
      ;; better-defaults
      emacs-lisp
@@ -316,7 +318,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (add-hook 'window-setup-hook #'neotree-toggle) 
+  (setq ns-use-srgb-colorspace nil)
+  (setq powerline-default-separator 'utf-8)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

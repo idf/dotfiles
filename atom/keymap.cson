@@ -5,7 +5,7 @@
   '': 'editor:select-line'
 
 '.platform-darwin atom-workspace':
-  'ctrl-alt-s': 'nuclide-related-files:jump-to-next-related-file'
+  'ctrl-alt-s': 'file:open-alternate'
 
 'body':
   'ctrl-x ctrl-1': 'pane:close-other-items'
