@@ -29,13 +29,8 @@ sudo bash ~/.osx
 * https://github.com/joelthelion/autojump
 * https://github.com/huyng/bashmarks
 
-# Karabiner
-To enable system-wide emacs mode, `cd Karabiner` and run the `bootstrap.sh` to install `private.xml` into Karabiner. Enable the private settings under the Karabiner preference panel.
-
-Download [Karabiner](https://pqrs.org/osx/karabiner/)
-
 # Keylayouts
-Keylayouts are in `./keylayout`  (edited by [Ukelele](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ukelele))
+Keylayouts are in `./keylayout` 
 
 To enable your new layout you must save it into your '~/Library/Keyboard Layouts', and then enable it from System Preferences -> Keyboard -> Input Sources.
 This only words in Cocoa apps; therefore, Karabiner in the above sections are preferred.
