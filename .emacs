@@ -88,7 +88,7 @@
 (el-get-install 'smex)  ; inline M-x autocomplete
 (el-get-install 'expand-region)  ; expand markset selection
 (el-get-install 'helm)  ; complete in buffer
-(el-get-install 'haskell-mode)
+; (el-get-install 'haskell-mode)
 (el-get-install 'powerline)
 (el-get-install 'ghc-mod)  ; cabal update && cabal install ghc-mod
 (el-get-install 'company-ghc)
@@ -259,7 +259,7 @@
 ;; ghc-mod
 (autoload 'ghc-init "ghc" nil t)
 (autoload 'ghc-debug "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+; (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 
 ;; neotree
 (require 'neotree)
