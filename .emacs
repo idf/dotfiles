@@ -30,11 +30,13 @@
 (setq-default c-basic-offset 4)
 
 ; line number
-(global-linum-mode t)  ; show line number
-(setq linum-format "%4d ")
+(global-display-line-numbers-mode t)
+(set-face-attribute 'line-number nil
+                    :background "#404040" :foreground "#1a1a1a")
+(set-face-attribute 'line-number-current-line nil
+                    :background "#1a1a1a" :foreground "#666666")
 ;; http://www.w3schools.com/colors/colors_picker.asp?colorhex=000000
-(set-face-background 'linum "#404040")
-(set-face-foreground 'linum "#1a1a1a")
+
 (setq frame-background-mode 'dark)
 ; fringe does not working in tty mode
 
@@ -187,8 +189,6 @@
  '(git-gutter:added-sign " ")
  '(git-gutter:deleted-sign " ")
  '(git-gutter:update-interval 1))  ; not real-time
-
-(git-gutter:linum-setup)
 
 (set-face-background 'git-gutter:unchanged "black")
 (set-face-background 'git-gutter:added "green")

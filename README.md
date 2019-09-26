@@ -30,9 +30,9 @@ sudo bash ~/.osx
 * https://github.com/huyng/bashmarks
 
 # Keylayouts
-Keylayouts are in `./keylayout` 
+Keylayouts are in `./keylayout`
 
-To enable your new layout you must save it into your '~/Library/Keyboard Layouts', and then enable it from System Preferences -> Keyboard -> Input Sources.
+To enable your new layout you must save it into your `~/Library/Keyboard Layouts`, and then enable it from System Preferences -> Keyboard -> Input Sources.
 This only words in Cocoa apps; therefore, Karabiner in the above sections are preferred.
 
 # Key Bindings
@@ -44,6 +44,11 @@ This only words in Cocoa apps; therefore, Karabiner in the above sections are pr
 
 [default keybindings](https://www.hcs.harvard.edu/~jrus/site/system-bindings.html)
 [emacs keybindings](http://www.hcs.harvard.edu/~jrus/site/KeyBindings/Emacs%20Esc%20Bindings.dict)
+
+# iTerm2 preference
+Preferences -> General -> Preferences -> Load preferences from custom directory.
+
+Set the preference folder to this `dotfiles` folder so that it can pick up the `com.googlecode.iterm2.plist`
 
 # Bashmarks
 [bashmarks cheatsheet](https://github.com/huyng/bashmarks)
