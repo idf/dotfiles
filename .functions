@@ -324,6 +324,11 @@ if [[ `uname` == 'Darwin' ]]; then
     preview() {
 	open -a "Preview.app" "$@"
     }
+
+    chromeapp() {
+        # open chrome in app mode
+        open -a "Google Chrome.app" -n --args --app="$@"
+    }
 fi
 
 # remove using regex
