@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# function keyword is optional but needed to avoid alias expansion
+# fn_name alias is expanded first when define fn_name() {} without function keyword
+
+
 # Funciton utils
 function call() {
     echo "calling: $1"
@@ -30,7 +34,7 @@ function mkd() {
 
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
-    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+    cd "$(osascript -e 'tell app "Finder" to P{}SIX path of (insertion location as alias)')"
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
@@ -274,23 +278,24 @@ fi
 #######################################
 NC='\033[0m';
 bold='\033[1m';
-cd() {
+
+function cd() {
     builtin cd "$@" && echo -e "${NC}$(pwd)${NC}" && ls -a
 }
 
-cp_pwd() {
+function cp_pwd() {
     call "pwd | tr -d '\n' | pbcopy"
 }
 
-ip2geo() {
+function ip2geo() {
     call "curl -A \"\" ipinfo.io/\"$1\""  # make empty header to request json
 }
 
-meminfo_linux() {
+function meminfo_linux() {
     egrep --color 'Mem|Cache|Swap' /proc/meminfo
 }
 
-diskinfo() {
+function diskinfo() {
     call "df -h"
 }
 
@@ -299,33 +304,33 @@ diskinfo() {
 #######################################
 if [[ `uname` == 'Darwin' ]]; then
     # Microsoft Office
-    word() {
+    function word() {
 	open -a "Microsoft Word.app" "$@"
     }
 
-    ppt() {
+    function ppt() {
 	open -a "Microsoft PowerPoint.app" "$@"
     }
 
-    excel() {
+    function excel() {
 	open -a "Microsoft Excel.app" "$@"
     }
 
     # Editors
-    sublime() {
+    function sublime() {
 	open -a "Sublime Text.app" "$@"
     }
 
     # Readers
-    skim() {
+    function skim() {
 	open -a "Skim.app" "$@"
     }
 
-    preview() {
+    function preview() {
 	open -a "Preview.app" "$@"
     }
 
-    chromeapp() {
+    function chromeapp() {
         # open chrome in app mode
         open -a "Google Chrome.app" -n --args --app="$@"
     }
