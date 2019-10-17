@@ -2,7 +2,6 @@
   name = Daniel D. ZHANG
   email = zhangdanyangg@gmail.com
 
-# courtesy to https://github.com/imwithye/dotfiles/blob/master/git/gitconfig
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge
@@ -15,10 +14,10 @@
 [alias]
   # smart log
   sl = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  amend = commit --amend --no-edit
+  lg = !git log --graph --abbrev-commit --decorate --date=relative --all --author=\"$(git config --get user.name)\"
   rmdf = !git rm $(git ls-files --deleted)
-  amendmsg = commit --amend
   up = checkout
-  today = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --since=midnight
   dff = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
 [color]
   ui = true
