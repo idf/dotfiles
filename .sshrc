@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-source $SSHHOME/.sshrc.d/.functions
-source $SSHHOME/.sshrc.d/.aliases
+for file in $SSHHOME/.sshrc.d/.{bash_prompt,aliases,functions,gitfunctions}; do
+    # [ -r "$file" ] && [ -f "$file" ] && source "$file";  # swallow file non-exisitence error
+    source "$file";
+done;
+
+bind -f $SSHHOME/.sshrc.d/.inputrc

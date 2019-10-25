@@ -452,7 +452,3 @@ vanilla_shell() {
 function kill_mosh_server() {
     kill $(pidof mosh-server)
 }
-
-
-# git specific functions
-source $HOME/.gitfunctions

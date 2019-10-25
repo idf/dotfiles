@@ -38,8 +38,9 @@ function doIt() {
 
     # config sshrc
     mkdir -p "$home/.sshrc.d"
-    ln $flag "$cur/.aliases" "$home/.sshrc.d"
-    ln $flag "$cur/.functions" "$home/.sshrc.d"
+    for file in $cur/.{bash_prompt,aliases,functions,gitfunctions,inputrc}; do
+        [ -r "$file" ] && [ -f "$file" ] && ln $flag "$file" "$home/.sshrc.d";
+    done
 
     source ~/.bashrc
     tmux source-file ~/.tmux.conf  # TODO handle tmux not started
