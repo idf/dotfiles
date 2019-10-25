@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+source $SSHHOME/.sshrc.d/.functions
+source $SSHHOME/.sshrc.d/.aliases

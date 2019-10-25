@@ -31,9 +31,16 @@ function doIt() {
 	esac
     done
 
+    # config percol
     ln $flag "$cur/tmux-config/.tmux.conf" $home
     mkdir -p "$home/.percol.d/"
     ln $flag "$cur/rc.py" "$home/.percol.d/"
+
+    # config sshrc
+    mkdir -p "$home/.sshrc.d"
+    ln $flag "$cur/.aliases" "$home/.sshrc.d"
+    ln $flag "$cur/.functions" "$home/.sshrc.d"
+
     source ~/.bashrc
     tmux source-file ~/.tmux.conf  # TODO handle tmux not started
 }

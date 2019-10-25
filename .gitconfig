@@ -14,7 +14,7 @@
 [alias]
   # smart log
   sl = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  amend = commit --amend --no-edit
+  amend = commit -a --amend --no-edit
   lg = !git log --graph --abbrev-commit --decorate --date=relative --all --author=\"$(git config --get user.name)\"
   rmdf = !git rm $(git ls-files --deleted)
   up = checkout
