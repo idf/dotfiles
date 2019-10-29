@@ -5,6 +5,7 @@ set completion-ignore-case off
 
 # List all matches in case multiple possible completions are possible
 set show-all-if-ambiguous on
+TAB:menu-complete
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
