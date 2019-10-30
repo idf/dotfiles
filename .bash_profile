@@ -112,6 +112,10 @@ if hash brew 2>/dev/null; then
     fi
 fi
 
+if hash thefuck 2>/dev/null; then
+    eval $(thefuck --alias)
+fi
+
 [[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
 
 # The next line updates PATH for the Google Cloud SDK.
