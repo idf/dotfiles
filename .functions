@@ -321,6 +321,11 @@ if [[ `uname` == 'Darwin' ]]; then
 	open -a "Sublime Text.app" "$@"
     }
 
+    function subl() {
+        sublime
+    }
+
+
     # Readers
     function skim() {
 	open -a "Skim.app" "$@"
