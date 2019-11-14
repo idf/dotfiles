@@ -6,7 +6,9 @@
 # brew install hh
 # https://github.com/dvorka/hstr
 
-export HH_CONFIG=hicolor         # get more colors
+# see man hstr for list of options
+
+export HSTR_CONFIG=hicolor,prompt-bottom         # get more colors
 shopt -s histappend              # append new history items to .bash_history
 export HISTCONTROL=ignorespace   # leading space hides commands from history
 export HISTFILESIZE=10000        # increase history file size (default is 500)

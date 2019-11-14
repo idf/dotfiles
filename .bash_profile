@@ -70,6 +70,11 @@ if [ "$(uname)" == "Darwin" ]; then
     }
 fi
 
+# fzf fuzzy finder to file finding
+# key bindings
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# after fzf to override c-r
 if hash hh 2>/dev/null; then
     source $HOME/.hh
 fi
