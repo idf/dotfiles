@@ -460,14 +460,15 @@ function kill_mosh_server() {
 
 function gcsec {
     remote=$1
-    FILE_NAME=$(mktemp /tmp/${remote##*/});
-    gsutil cp $remote $FILE_NAME;
+    FILE_NAME=$(mktemp /tmp/${remote##*/})
+    gsutil cp $remote $FILE_NAME
     V0=$(md5 $FILE_NAME);
     echo $V0
-    ec $FILE_NAME;
+    ec $FILE_NAME
     V1=$(md5 $FILE_NAME);
     echo $V1
     if [ "$V0" != "$V1" ]; then
-        gsutil cp $FILE_NAME $remote;
+        gsutil cp $FILE_NAME $remote
     fi
+    rm $FILE_NAME
 }
