@@ -339,6 +339,11 @@ if [[ `uname` == 'Darwin' ]]; then
         # open chrome in app mode
         open -a "Google Chrome.app" -n --args --app="$@"
     }
+
+    function ldd() {
+        # show executable library loaded
+        otool -L "$@"
+    }
 fi
 
 # remove using regex
