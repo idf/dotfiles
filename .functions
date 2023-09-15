@@ -340,6 +340,10 @@ if [[ `uname` == 'Darwin' ]]; then
         open -a "Google Chrome.app" -n --args --app="$@"
     }
 
+    function mcsv() {
+        open -a "Modern CSV.app" "$@"
+    }
+
     function ldd() {
         # show executable library loaded
         otool -L "$@"

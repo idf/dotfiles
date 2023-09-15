@@ -1,11 +1,11 @@
 {
 	"font_face": "Fira Code",
-	"font_size": 14,
+	"font_size": 16,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"open_files_in_new_window": false,
 	"tab_size": 4,
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
 }
