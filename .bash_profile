@@ -75,7 +75,7 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # after fzf to override c-r
-if hash hh 2>/dev/null; then
+if hash hh 2>/dev/null; then  # hstr instead of hh
     source $HOME/.hh
 fi
 
