@@ -6,6 +6,8 @@ shared dot files settings
 # To install
 Under current directory
 ```bash
+# install https://github.com/idf/bootstraping first
+tmux
 bash bootstrap.sh
 ```
 

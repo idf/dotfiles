@@ -133,3 +133,5 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-clo
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
