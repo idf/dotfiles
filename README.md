@@ -7,6 +7,7 @@ shared dot files settings
 Under current directory
 ```bash
 # install https://github.com/idf/bootstraping first
+chsh -s /bin/bash
 tmux
 bash bootstrap.sh
 ```
