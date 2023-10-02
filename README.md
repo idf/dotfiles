@@ -37,6 +37,9 @@ Preferences -> General -> Preferences -> Load preferences from custom directory.
 
 Set the preference folder to this `dotfiles` folder so that it can pick up the `com.googlecode.iterm2.plist`
 
+Make sure you have run `chsh -s /bin/bash` since iTerm2 uses login shell.
+Profiles -> General -> Command -> Send text at start -> `source ~/.bashrc`
+
 # Bashmarks
 [bashmarks cheatsheet](https://github.com/huyng/bashmarks)
 
