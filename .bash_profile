@@ -139,3 +139,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$(pyenv root)/shims:$PATH"
+
+# Created by `pipx` on 2024-06-13 18:27:39
+export PATH="$PATH:$HOME/.local/bin"
