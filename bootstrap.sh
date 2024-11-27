@@ -32,7 +32,7 @@ function doIt() {
     done
 
     # config percol
-    ln $flag "$cur/tmux-config/.tmux.conf" $home
+    # ln $flag "$cur/tmux-config/.tmux.conf" $home
     mkdir -p "$home/.percol.d/"
     ln $flag "$cur/rc.py" "$home/.percol.d/"
 
@@ -43,7 +43,7 @@ function doIt() {
     done
 
     source ~/.bashrc
-    tmux source-file ~/.tmux.conf  # TODO handle tmux not started
+    # tmux source-file ~/.tmux.conf  # TODO handle tmux not started
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
