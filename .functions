@@ -305,21 +305,26 @@ function diskinfo() {
 if [[ `uname` == 'Darwin' ]]; then
     # Microsoft Office
     function word() {
-	open -a "Microsoft Word.app" "$@"
+        open -a "Microsoft Word.app" "$@"
     }
 
     function ppt() {
-	open -a "Microsoft PowerPoint.app" "$@"
+        open -a "Microsoft PowerPoint.app" "$@"
     }
 
     function excel() {
-	open -a "Microsoft Excel.app" "$@"
+        open -a "Microsoft Excel.app" "$@"
     }
 
     # Editors
     function sublime() {
-	open -a "Sublime Text.app" "$@"
+        open -a "Sublime Text.app" "$@"
     }
+
+    function vscode() {
+        open -a "Visual Studio Code.app" "$@"
+    }
+
 
     function subl() {
         sublime
@@ -328,11 +333,11 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # Readers
     function skim() {
-	open -a "Skim.app" "$@"
+        open -a "Skim.app" "$@"
     }
 
     function preview() {
-	open -a "Preview.app" "$@"
+        open -a "Preview.app" "$@"
     }
 
     function chromeapp() {

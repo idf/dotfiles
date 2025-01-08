@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 export ALTERNATE_EDITOR="";  # to make emacs --daemon auto start
@@ -72,24 +74,12 @@ fi
 
 # fzf fuzzy finder to file finding
 # key bindings
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source $HOME/.fzf.bash
 
 # after fzf to override c-r
 if hash hh 2>/dev/null; then  # hstr instead of hh
     source $HOME/.hh
 fi
-
-# Fix Bash-Completion Errors by using updated shell
-if ! grep '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
-fi;
-
-# Fix complete: -D: invalid option
-if ! grep '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
-fi;
 
 # C-l: don't clear the screen unless otherwise explicitly type `clear`
 bind -x '"\C-l": ls'
@@ -109,12 +99,6 @@ if hash cheat 2> /dev/null; then
     }
 
     complete -F _cheat_autocomplete cheat
-fi
-
-if hash brew 2>/dev/null; then
-    if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-        . $(brew --prefix)/share/bash-completion/bash_completion
-    fi
 fi
 
 if hash thefuck 2>/dev/null; then
@@ -138,7 +122,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$(pyenv root)/shims:$PATH"
 
 # Created by `pipx` on 2024-06-13 18:27:39
