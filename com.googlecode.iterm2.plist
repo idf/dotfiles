@@ -257,6 +257,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>NeverBlockSystemShutdown</key>
+	<true/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
