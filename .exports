@@ -20,8 +20,7 @@ export LESS_TERMCAP_md="${yellow}";
 export MANPAGER="less -X";
 
 # home bin
-PATH=$PATH:$home/bin;
-export PATH;
+export PATH="$HOME/bin:$PATH";
 
 # Always enable colored `grep` output
 # export GREP_OPTIONS="--color=auto";  # issues with git-bash

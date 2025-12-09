@@ -1,4 +1,4 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ ! -f /opt/homebrew/bin/brew ]] || eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
@@ -15,7 +15,7 @@ if hash hh 2>/dev/null; then  # hstr instead of hh
     source $HOME/.hh
 fi
 
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme ]] || source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

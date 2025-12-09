@@ -436,6 +436,7 @@
       res+=" ${modified}wip"
     fi
 
+    res+=" "
     if (( VCS_STATUS_COMMITS_AHEAD || VCS_STATUS_COMMITS_BEHIND )); then
       # ⇣42 if behind the remote.
       (( VCS_STATUS_COMMITS_BEHIND )) && res+="${clean}⇣${VCS_STATUS_COMMITS_BEHIND}"

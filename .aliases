@@ -8,6 +8,7 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias tmuxpl="tmuxp load ~/.tmuxp/0.json"
+alias cr="cursor"
 
 # Shortcuts
 alias sadd="ssh-add $HOME/.ssh/id_rsa"

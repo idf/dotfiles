@@ -1,39 +1,39 @@
 #!/usr/bin/env bash
-call() {
+function call() {
     echo "calling: $1"
     eval $1
 }
 
 ## Git
-gst() {
+function gst() {
     call "git status -sb"
 }
 
-ginit() {
+function ginit() {
     git init
     cp ~/.gitattributes .
     cp ~/.gitignore .
 }
 
-ghcur() {
+function ghcur() {
     branch_name=$(git symbolic-ref --short -q HEAD)
     git push origin $branch_name
 }
 
-glcur() {
+function glcur() {
     branch_name=$(git symbolic-ref --short -q HEAD)
     git pull origin $branch_name
 }
 
-gcam() {
+function gcam() {
     call "git commit -am \"$@\""
 }
 
-vcam() {
+function vcam() {
     call "v commit -am \"$@\""
 }
 
-gbincr() {
+function gbincr() {
     base_branch=$(git symbolic-ref --short -q HEAD)
     base_no=${base_branch:1}
     new_no=$((base_no+1))
@@ -42,12 +42,12 @@ gbincr() {
     git branch --set-upstream-to=$base_branch $new_branch
 }
 
-gbupmaster() {
+function gbupmaster() {
     branch_name=$(git symbolic-ref --short -q HEAD)
     git branch --set-upstream-to=master $branch_name
 }
 
-githq() {
+function githq() {
     if [ $1 = 'amendtime' ]; then
         # take an argument: "Wed Feb 16 14:00 2011 +0100"
         git commit --amend --date="$2"
