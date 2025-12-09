@@ -79,6 +79,9 @@ fi
 # after fzf to override c-r
 if hash hh 2>/dev/null; then  # hstr instead of hh
     source $HOME/.hh
+    shopt -s histappend              # append new history items to .bash_history
+    # if this is interactive shell, then bind hh to Ctrl-r [eamcs mode]
+    if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
 fi
 
 # C-l: don't clear the screen unless otherwise explicitly type `clear`
