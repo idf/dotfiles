@@ -38,7 +38,7 @@ function doIt() {
 
     # config sshrc
     mkdir -p "$home/.sshrc.d"
-    for file in $cur/.{bash_prompt,aliases,functions,gitfunctions,inputrc}; do
+    for file in $cur/.{bash_prompt,aliases,functions,gitfunctions,inputrc,p10k.zsh,zprofile}; do
         [ -r "$file" ] && [ -f "$file" ] && ln $flag "$file" "$home/.sshrc.d";
     done
 

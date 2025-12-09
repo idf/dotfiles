@@ -486,3 +486,33 @@ function gcsec {
     fi
     rm $FILE_NAME
 }
+
+function mvln() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: mvln <filename> <target_dir>"
+        return 1
+    fi
+
+    local file="$1"
+    local target="$2"
+
+    # Validate file
+    if [ ! -e "$file" ]; then
+        echo "Error: file '$file' does not exist."
+        return 1
+    fi
+
+    # Ensure target dir exists
+    if [ ! -d "$target" ]; then
+        echo "Target directory '$target' does not exist. Create it? (y/n)"
+        read -r answer
+        if [ "$answer" = "y" ]; then
+            mkdir -p "$target"
+        else
+            return 1
+        fi
+    fi
+
+    mv "$file" "$target/" || return 1
+    ln -nfs "$target/$file" "$file"
+}
