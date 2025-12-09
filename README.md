@@ -3,6 +3,13 @@ dotfiles
 
 shared dot files settings
 
+# To install (zsh)
+Under current directory
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+bash bootstrap.sh
+```
+
 # To install
 Under current directory
 ```bash
