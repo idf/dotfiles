@@ -318,7 +318,7 @@ if [[ `uname` == 'Darwin' ]]; then
 
     # Editors
     function sublime() {
-        open -a "Sublime Text.app" "$@"
+        "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" -a "$@"
     }
 
     function vscode() {
@@ -414,7 +414,7 @@ py_clean() {
     call "rm **/*.pyc"
 }
 
-repeat() {
+function repeat() {
     # Usage: repeat 5 echo "hello"
     seq $1 | xargs -Iz ${@:2}
 }
