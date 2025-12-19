@@ -531,5 +531,5 @@ function zsshrc() {
   } > "$tmp"
 
   scp "$tmp" "$host:$tmp" >/dev/null 2>&1
-  ssh -t "$host" "zsh -l -c 'source $tmp; exec zsh -l'"
+  ssh -t "$host" "cat '$tmp' >> ~/.zshenv; exec zsh -l"
 }
