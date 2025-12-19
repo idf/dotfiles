@@ -525,13 +525,14 @@ function zsshrc() {
   local tmp=/tmp/zsshrc-$$
   {
     # minimal basic configs
-    [[ -f ~/.aliases   ]] && cat ~/.aliases
+    [[ -f ~/.zshconfig ]] && cat ~/.zshconfig
+    [[ -f ~/.aliases ]] && cat ~/.aliases
     [[ -f ~/.functions ]] && cat ~/.functions
     [[ -f ~/.gitfunctions ]] && cat ~/.gitfunctions
   } > "$tmp"
 
   scp "$tmp" "$host:$tmp" >/dev/null 2>&1
-  ssh -t "$host" "cat '$tmp' >> ~/.zshenv; exec zsh -l"
+  ssh -t "$host" "cat '$tmp' > ~/.zshenv; exec zsh -l"
 }
 
 function git() {
