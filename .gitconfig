@@ -11,15 +11,6 @@
   autocrlf = false
   eol = lf
   pager = less -+$LESS -RSX
-[alias]
-  # smart log
-  sl = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  amend = commit -a --amend --no-edit
-  lg = !git log --graph --abbrev-commit --decorate --date=relative --all --author=\"$(git config --get user.name)\"
-  rmdf = !git rm $(git ls-files --deleted)
-  up = checkout
-  dff = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
-  br = branch --sort=-committerdate
 [color]
   ui = true
 [init]

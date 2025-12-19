@@ -533,3 +533,59 @@ function zsshrc() {
   scp "$tmp" "$host:$tmp" >/dev/null 2>&1
   ssh -t "$host" "cat '$tmp' >> ~/.zshenv; exec zsh -l"
 }
+
+function git() {
+  case "$1" in
+    up) shift; command git checkout "$@" ;;
+    dff)
+        shift
+        # Find repo root + prefix (prefix = path from repo root to current dir)
+        local top prefix
+        top=$(command git rev-parse --show-toplevel 2>/dev/null) || {
+            # Not in a repo; fall back
+            command git diff "$@"
+            return
+        }
+        prefix=$(command git rev-parse --show-prefix 2>/dev/null)
+
+        (
+            cd "$top" || exit 1
+            [[ -n "$prefix" ]] && cd "$prefix" || true
+
+            if command -v diff-so-fancy >/dev/null 2>&1; then
+                command git diff --color "$@" | diff-so-fancy | less --tabs=4 -RFX
+            else
+                # fallback if diff-so-fancy isn't installed
+                command git diff --color "$@" | less --tabs=4 -RFX
+            fi
+        )
+        ;;
+    amend) shift; command git commit -a --amend --no-edit "$@" ;;
+    br) shift; command git branch --sort=-committerdate "$@" ;;
+    lg)
+        shift
+        local me
+        me="$(command git config --get user.name 2>/dev/null)"
+
+        if [[ -z "$me" ]]; then
+            echo "git lgme: user.name is not set (git config --global user.name ...)" >&2
+            return 1
+        fi
+
+        command git log --graph --abbrev-commit --decorate --date=relative --all --author="$me" "$@"
+      ;;
+    sl) shift; command git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit "$@" ;;
+    rmdr) shift; command git rm $(git ls-files --deleted) "$@" ;;
+    root)
+        shift
+        rootdir=$(command git rev-parse --show-toplevel)
+        cd "$rootdir"
+        ;;
+    cur)
+        shift
+        command git rev-parse --abbrev-ref HEAD
+        ;;
+    *)  command git "$@" ;;
+  esac
+}
+
